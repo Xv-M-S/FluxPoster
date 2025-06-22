@@ -2,7 +2,7 @@
 
 # Introduction
 
-The README for v2 branch, v2 branch has the follow feaqures.
+The README for v2 branch, v2 branch has the follow features.
 
 * train poster generation
 * inference poster generation
