@@ -1,0 +1,55 @@
+{
+    "image_name": "48_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.40283203125,
+                0.1098826714801444,
+                0.6318359375,
+                0.03835740072202166
+            ],
+            [
+                "THESPRING",
+                0.9993751049041748
+            ]
+        ],
+        [
+            [
+                0.302734375,
+                0.1624548736462094,
+                0.435546875,
+                0.039711191335740074
+            ],
+            [
+                "BEAUTY",
+                0.9996615052223206
+            ]
+        ],
+        [
+            [
+                0.3134765625,
+                0.26624548736462095,
+                0.439453125,
+                0.021660649819494584
+            ],
+            [
+                "\u95ea\u8000\u4eba\u751f\u5c31\u4ece\u6b64\u523b\u5f00\u59cb",
+                0.9901536703109741
+            ]
+        ],
+        [
+            [
+                0.33251953125,
+                0.47495487364620936,
+                0.1826171875,
+                0.043772563176895304
+            ],
+            [
+                "399",
+                0.9998748898506165
+            ]
+        ]
+    ],
+    "description": "This image is an advertisement for a spring beauty promotion. Here are the details:\n\n### **Visual Elements:**\n1. **Background and Theme:**\n   - The background is a soft, light blue color with a subtle texture that resembles fabric or water.\n   - The overall theme is springtime, emphasizing freshness, renewal, and beauty.\n\n2. **Text:**\n   - **Title:** \"THE SPRING BEAUTY\" in large, bold white letters at the top left.\n   - **Subtitle:** Below the title, there is Chinese text that translates to:\n     - \"Become beautiful together this spring.\"\n     - \"A shining life starts from now.\"\n     - \"Spring skin hydration and repair.\"\n     - \"Let your skin be reborn in spring.\"\n\n3. **Promotion Details:**\n   - **Offer:** \"Spring Skin Renewal Package (4 Items)\" is highlighted.\n   - **Price:** The price is prominently displayed as \"RMB 399\" in large white numbers.\n   - **Services Included:** \n     - Water Light Needle Treatment\n     - Hyaluronic Acid Rejuvenation\n     - Collagen Protein Filling\n     - Basic Care and Maintenance\n\n4. **Call to Action:**\n   - At the bottom, there is a prompt in Chinese encouraging viewers to search the official public account for more benefits.\n\n5. **Floral Design:**\n   - White flowers with green leaves are arranged at the bottom of the image, adding to the spring aesthetic.\n\n### **Model:**\n- A woman is featured on the right side of the image.\n- She has dark hair styled up, with some strands loosely framing her face.\n- She is wearing elegant jewelry, including a necklace and earrings.\n- Her outfit is a sleeveless dress with a gradient of pastel colors (pink, purple, blue), giving it an iridescent effect.\n- Her pose is graceful, with one arm slightly bent and resting near her waist.\n\n### **Overall Impression:**\nThe advertisement conveys a sense of elegance, rejuvenation, and natural beauty, targeting individuals interested in skincare and beauty treatments during the spring season. The use of soft colors, floral elements, and a stylish model creates an appealing and aspirational visual message.",
+    "finalDescription": "This advertisement promotes a spring beauty campaign with a focus on renewal and hydration. The soft, light blue background and floral design evoke a springtime theme, while the text highlights phrases like \"Become beautiful together this spring\" and emphasizes skin hydration and repair. A \"Spring Skin Renewal Package\" is offered for RMB 399, including treatments such as Water Light Needle, Hyaluronic Acid Rejuvenation, Collagen Protein Filling, and basic care. The elegant model, adorned with jewelry and wearing a gradient pastel dress, reinforces the message of elegance and natural beauty. The ad encourages viewers to explore more benefits via an official public account, creating an aspirational and inviting visual experience."
+}

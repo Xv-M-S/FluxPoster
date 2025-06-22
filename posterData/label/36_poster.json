@@ -1,0 +1,55 @@
+{
+    "image_name": "36_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.26025390625,
+                0.04625451263537906,
+                0.1005859375,
+                0.02391696750902527
+            ],
+            [
+                "\u60a6\u57ce",
+                0.9857214689254761
+            ]
+        ],
+        [
+            [
+                0.94091796875,
+                0.7678249097472925,
+                0.0380859375,
+                0.09160649819494585
+            ],
+            [
+                "2025/04/20",
+                0.9997559785842896
+            ]
+        ],
+        [
+            [
+                0.15869140625,
+                0.9390794223826715,
+                0.2138671875,
+                0.018050541516245487
+            ],
+            [
+                "\u54c1\u9274\u70ed\u7ebf021-",
+                0.9256620407104492
+            ]
+        ],
+        [
+            [
+                0.41162109375,
+                0.9431407942238267,
+                0.2880859375,
+                0.027978339350180504
+            ],
+            [
+                "0000 0000",
+                0.9540634155273438
+            ]
+        ]
+    ],
+    "description": "This image is a beautifully designed poster that celebrates the traditional Chinese solar term \"Grain Rain\" (\u8c37\u96e8 - G\u01d4y\u01d4). Here's a detailed description of the elements in the picture:\n\n### 1. **Title and Theme:**\n   - The central theme of the poster is \"Grain Rain\" (\u8c37\u96e8), which is prominently displayed in large, stylized Chinese characters. \n   - Below the Chinese characters, the English translation \"GRAIN RAIN\" is written in uppercase letters.\n   - The word \"Spring\" is also included in a cursive font, adding an artistic touch.\n\n### 2. **Artistic Style:**\n   - The overall design uses a soft, pastel green color palette, evoking a sense of freshness and vitality associated with spring.\n   - The background features flowing, abstract lines that resemble rain or water, symbolizing the abundant rainfall during this season.\n   - Traditional Chinese brushstroke techniques are incorporated, giving the poster a classic and elegant feel.\n\n### 3. **Illustrations:**\n   - **Top Section:** A farmer is depicted plowing a field with the help of an ox, representing agricultural activities typical of this season.\n   - **Middle Section:** Two farmers are shown planting seeds or tending to crops, emphasizing the importance of farming during Grain Rain.\n   - **Bottom Section:** Another scene shows a farmer working with an ox, reinforcing the agricultural theme.\n\n### 4. **Text Elements:**\n   - **Left Side Text:** \n     - \"\u6625\u96e8\u6c8f\u8c37\u82bd \u6655\u67d3\u4e86\u6e56\u5c71\u7684\u8bd7\u610f\" translates to \"Spring rain brews the sprouts of the valley, dyeing the lakes and mountains with poetic charm.\"\n     - This poetic line enhances the cultural and seasonal atmosphere.\n   - **Right Side Text:** \n     - \"\u519c\u5386\u4e09\u6708\u5eff\u4e09 2025/04/20\" indicates the date of Grain Rain in both the lunar calendar (March 23) and the Gregorian calendar (April 20, 2025).\n\n### 5. **Contact Information:**\n   - At the bottom of the poster, there is contact information for what appears to be a real estate project:\n     - **Phone Number:** \u54c1\u9274\u70ed\u7ebf: 021-0000 0000 (Hotline: 021-0000 0000)\n     - **Project Address:** \u4e0a\u6d77\u5e02\u6d66\u4e1c\u65b0\u533a\u78a7\u6ce2\u8def666\u53f78\u53f7\u697c1508 \u5343\u56fe\u60a6\u57ce (No. 666, Bibo Road, Pudong New Area, Shanghai, Building 8, Room 1508, Qiantu Yuecheng)\n     - **Website:** HTTPS://WWW.58PIC.COM/\n     - **QR Code:** A QR code is provided for easy access to more information.\n\n### 6. **Additional Details:**\n   - The top left corner includes the text \"\u5343\u56fe\u00b7\u60a6\u57ce\" (Qiantu Yuecheng), which is likely the name of the project or brand.\n   - The phrase \"\u5885\u5c45\u5178\u8303 \u5320\u5fc3\u4e4b\u4f5c\" translates to \"Villa living exemplar, masterpiece crafted with\u5320\u5fc3 (artisan spirit/craftsmanship).\"\n\n### Summary:\nThis poster not only celebrates the traditional Chinese solar term \"Grain Rain\" with its rich cultural and agricultural significance but also serves as an advertisement for a real estate project. The design effectively combines traditional Chinese aesthetics with modern graphic design elements, creating a visually appealing and informative piece.",
+    "finalDescription": "This poster celebrates the Chinese solar term \"Grain Rain\" (\u8c37\u96e8) while promoting a real estate project. The design features large, stylized Chinese characters for \"Grain Rain,\" its English translation, and the word \"Spring\" in cursive. It uses a soft green color palette and incorporates traditional brushstroke techniques, abstract rain lines, and illustrations of farmers working in fields to highlight the agricultural significance of this season. A poetic line about spring rain and the date of Grain Rain in both lunar and Gregorian calendars are included. At the bottom, contact information for a real estate project in Shanghai is provided, along with a QR code and website link. The poster blends cultural elements with modern design, serving both as a cultural tribute and an advertisement."
+}

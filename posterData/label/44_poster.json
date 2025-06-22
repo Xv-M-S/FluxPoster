@@ -1,0 +1,55 @@
+{
+    "image_name": "44_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.50244140625,
+                0.10085740072202166,
+                0.9599609375,
+                0.06453068592057762
+            ],
+            [
+                "MOTHER'S",
+                0.9908328056335449
+            ]
+        ],
+        [
+            [
+                0.23193359375,
+                0.19020758122743683,
+                0.4423828125,
+                0.07175090252707582
+            ],
+            [
+                "DAY",
+                0.9998660683631897
+            ]
+        ],
+        [
+            [
+                0.12060546875,
+                0.3352888086642599,
+                0.1650390625,
+                0.01444043321299639
+            ],
+            [
+                "2025.05.11",
+                0.9991933107376099
+            ]
+        ],
+        [
+            [
+                0.6328125,
+                0.9546480144404332,
+                0.333984375,
+                0.02391696750902527
+            ],
+            [
+                "021-0000 0000",
+                0.9593712687492371
+            ]
+        ]
+    ],
+    "description": "This image is a promotional poster for Mother's Day. Here are the details:\n\n### Text Elements:\n1. **Title**: \n   - The top of the poster features the text \"MOTHER'S DAY\" in large, bold, coral-pink letters.\n   - To the right of \"DAY,\" the Chinese characters \"\u6bcd\u4eb2\u8282\" (Mother's Day) are written vertically.\n\n2. **Subtitle**:\n   - Below the title, there is a subtitle in Chinese: \"\u7231\u5982\u82b1 \u631a\u7231\u82ac\u82b3\" which translates to \"Love is like a flower, sincere love is fragrant.\"\n   - The date \"2025.05.11\" is also included, indicating the date of Mother's Day in 2025.\n\n3. **Company Information**:\n   - At the bottom of the poster, there is information about a company:\n     - Name: \u4e0a\u6d77\u5343\u56fe\u9c9c\u82b1\u6709\u9650\u516c\u53f8 (Shanghai Qiantu Fresh Flowers Co., Ltd.)\n     - Address: \u4e0a\u6d77\u6d66\u4e1c\u65b0\u533a\u78a7\u6ce2\u8def666\u53f78\u53f7\u697c (No. 8 Building, 666 Bibo Road, Pudong New Area, Shanghai)\n     - Contact Information: \u8054\u7cfb\u7535\u8bdd: 021-0000 0000 (Contact Number: 021-0000 0000)\n     - Slogan: \u6bcd\u7231\u5982\u82b1 \u631a\u7231\u82ac\u82b3 (Maternal love is like a flower, sincere love is fragrant)\n\n4. **Logo**:\n   - In the top left corner, there is a logo with the text \"\u5343\u56fe\" (Qiantu).\n\n### Visual Elements:\n1. **Flowers**:\n   - The central focus of the image is a beautiful bouquet of flowers placed in a woven basket.\n   - The flowers include various types of peonies in shades of pink, white, and orange, along with some green leaves and smaller yellow flowers.\n   - The arrangement is lush and vibrant, symbolizing love and beauty.\n\n2. **Background**:\n   - The background is a soft, light color, likely white or off-white, which helps the flowers stand out prominently.\n   - The overall aesthetic is clean and elegant, fitting for a Mother's Day theme.\n\n3. **Basket**:\n   - The flowers are arranged in a natural woven basket, adding a rustic and charming touch to the composition.\n\n4. **QR Code**:\n   - In the bottom right corner, there is a QR code, likely for more information or to visit the company's website.\n\n### Overall Design:\n- The design is visually appealing and emotionally resonant, using soft colors and a gentle layout to evoke feelings of warmth and affection associated with Mother's Day.\n- The combination of English and Chinese text makes it accessible to a bilingual audience.\n\nThis poster effectively combines textual and visual elements to celebrate Mother's Day and promote the services of the mentioned company.",
+    "finalDescription": "This promotional poster for Mother's Day features the title \"MOTHER'S DAY\" in bold coral-pink letters, alongside the Chinese characters \"\u6bcd\u4eb2\u8282.\" The subtitle, \"Love is like a flower, sincere love is fragrant,\" and the date \"2025.05.11\" are prominently displayed. At the bottom, the poster includes details about Shanghai Qiantu Fresh Flowers Co., Ltd., such as its address, contact number, and slogan. The central visual element is a vibrant bouquet of peonies in a woven basket, set against a soft, light background. A QR code is provided for additional information. The design effectively blends English and Chinese text, creating an emotionally resonant and visually appealing advertisement that celebrates Mother's Day while promoting the company's services."
+}

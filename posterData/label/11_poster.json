@@ -1,0 +1,55 @@
+{
+    "image_name": "11_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.921875,
+                0.17193140794223827,
+                0.052734375,
+                0.1832129963898917
+            ],
+            [
+                "\u5de7\u514b\u529b\u7cfb\u5217\u65b0\u54c1",
+                0.9980753660202026
+            ]
+        ],
+        [
+            [
+                0.25341796875,
+                0.21141696750902528,
+                0.3818359375,
+                0.0898014440433213
+            ],
+            [
+                "\u9650\u5b9a",
+                0.9998574256896973
+            ]
+        ],
+        [
+            [
+                0.4990234375,
+                0.19697653429602888,
+                0.109375,
+                0.056407942238267145
+            ],
+            [
+                "\u86cb",
+                0.9999736547470093
+            ]
+        ],
+        [
+            [
+                0.2509765625,
+                0.9287003610108303,
+                0.341796875,
+                0.021660649819494584
+            ],
+            [
+                "(\u6bd4\u5229\u65f6\u8fdb\u53e3\u53ef\u53ef\uff09",
+                0.9156826734542847
+            ]
+        ]
+    ],
+    "description": "This image is an advertisement for a special Mother's Day limited edition cake. Here are the details:\n\n### **1. Cake Design:**\n- **Shape and Structure:** The cake is square-shaped with a thick layer of white frosting on top.\n- **Decorations:**\n  - A large red rose is placed prominently in the center of the cake.\n  - Surrounding the rose are small dollops of white frosting arranged in a decorative pattern.\n  - Three red, apple-shaped decorations (possibly made of fondant or similar material) are also placed on the cake, each accompanied by small pink flowers.\n  - The sides of the cake are covered with what appears to be crushed chocolate pieces, giving it a textured appearance.\n\n### **2. Presentation:**\n- The cake is placed on a white plate with a gold rim.\n- Another red rose is positioned next to the cake on the plate, adding to the aesthetic appeal.\n- Red rose petals are scattered around the plate, enhancing the romantic and festive theme.\n\n### **3. Background:**\n- The background is a deep red color, which complements the red roses and creates a warm, inviting atmosphere.\n- There are additional rose petals scattered in the background, further emphasizing the theme.\n\n### **4. Text:**\n- **Main Title:** \"\u6bcd\u4eb2\u8282\u9650\u5b9a\u86cb\u7cd5\" (Mother's Day Limited Edition Cake) is written in large, bold Chinese characters at the top left.\n- **English Subtitle:** \"LIMITED CAKE\" is written below the main title in smaller letters.\n- **Additional Information:**\n  - To the right, there is text that reads \"\u5de7\u514b\u529b\u7cfb\u5217\u65b0\u54c1 (\u6d53\u90c1)\" which translates to \"New Chocolate Series Product (Rich).\"\n  - Below this, there is a description mentioning that the cocoa content increases by 1% for every year you love someone, suggesting a personalized touch.\n  - At the bottom, it states \"(\u6bd4\u5229\u65f6\u8fdb\u53e3\u53ef\u53ef) 0\u53cd\u5f0f\u8102\u80aa\u9178 \u4f4eGI\u4ee3\u7cd6\u53ef\u9009,\" which translates to \"(Belgian Imported Cocoa) 0 Trans Fats, Low GI Sugar Substitute Available.\"\n\n### **5. QR Code:**\n- In the bottom right corner, there is a QR code, likely for customers to scan and learn more about the product or make a purchase.\n\n### **Overall Theme:**\nThe advertisement emphasizes luxury, love, and indulgence, making it an appealing choice for a special occasion like Mother's Day. The use of rich colors, elegant design, and high-quality ingredients (like Belgian cocoa) aims to attract customers looking for a premium gift.",
+    "finalDescription": "This image advertises a special Mother's Day limited edition cake, featuring a square-shaped design with white frosting, a prominent red rose in the center, and decorative elements like small white frosting dollops, red apple-shaped decorations, and pink flowers. The sides are textured with crushed chocolate pieces. Presented on a white plate with a gold rim, the cake is accompanied by an additional red rose, scattered rose petals, and a deep red background that enhances the romantic theme. Text highlights its \"Mother's Day Limited Edition\" title, rich chocolate series, and personalized cocoa content that increases by 1% for every year of love. It also mentions Belgian imported cocoa, no trans fats, and optional low GI sugar substitutes. A QR code is provided for more information. The ad emphasizes luxury, indulgence, and a premium gifting experience."
+}

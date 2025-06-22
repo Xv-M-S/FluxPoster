@@ -1,0 +1,43 @@
+{
+    "image_name": "2_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.44189453125,
+                0.10356498194945848,
+                0.5498046875,
+                0.09882671480144405
+            ],
+            [
+                "\u65e5\u597d\u826f\u8282",
+                0.9093795418739319
+            ]
+        ],
+        [
+            [
+                0.77001953125,
+                0.5374548736462094,
+                0.2197265625,
+                0.03790613718411552
+            ],
+            [
+                "15\u5143\uff0f\u4efd",
+                0.9329438209533691
+            ]
+        ],
+        [
+            [
+                0.18408203125,
+                0.7610559566787004,
+                0.0908203125,
+                0.03655234657039711
+            ],
+            [
+                "5\u5143",
+                0.9993809461593628
+            ]
+        ]
+    ],
+    "description": "This image is a promotional poster for a spring-themed food festival. Here's a detailed description:\n\n### **Title and Theme**\n- The top of the poster features the title \"\u6625\u65e5\u597d\u98df\u8282 \u6625\u5473\u6108\u5f25\u6f2b\" which translates to \"Spring Good Food Festival, Spring Flavor Spreads Even More.\"\n- The design uses soft pastel colors like light blue, pink, and green, evoking a fresh and lively spring atmosphere.\n- There are decorative elements such as cherry blossoms (pink flowers) that enhance the spring theme.\n\n### **Food Items Featured**\nThe poster showcases three specific dishes:\n1. **Jie Cai Dou Fu Geng (\u8360\u83dc\u8c46\u8150\u7fb9 - Chickweed Tofu Soup):**\n   - A bowl of chickweed tofu soup is displayed prominently in the center.\n   - The soup appears to contain leafy greens (chickweed), tofu cubes, and possibly some corn kernels.\n   - The price is listed as **15\u5143/\u4efd (15 Yuan per serving)**.\n\n2. **Yuan Wei Qing Tuan (\u539f\u5473\u9752\u56e2 - Original Green Rice Ball):**\n   - Below the soup, there is an image of a green rice ball (qing tuan), a traditional Chinese dessert often enjoyed during spring.\n   - It is placed on a green leaf, emphasizing its natural and fresh ingredients.\n   - The price is **5\u5143/\u4e2a (5 Yuan each)**.\n\n3. **Dou Ya Chao Xiang Chun (\u8c46\u82bd\u7092\u9999\u693f - Fried Bean Sprouts with Toona Sinensis):**\n   - On the right side, there is a dish of stir-fried bean sprouts with toona sinensis (a type of edible tree bud).\n   - The dish looks vibrant with green vegetables and bean sprouts.\n   - The price is **18\u5143/\u4efd (18 Yuan per serving)**.\n\n### **Additional Text**\n- To the right of the soup, there is text that reads \"\u7f8e\u5473\u4e0a\u65b0 \u6625\u65e5\u9650\u5b9a,\" meaning \"New Delicious Flavors, Spring Limited Edition.\"\n- At the bottom of the poster, there is a call-to-action: \"\u5373\u523b\u4eab\u53d7\u6625\u5929\u7b2c\u4e00\u62b9\u6ecb\u5473,\" which translates to \"Enjoy the First Taste of Spring Right Away.\"\n- A phone number is provided for inquiries or orders: **021-0000 0000**.\n\n### **Design Elements**\n- The background has a gradient of soft colors with abstract shapes, contributing to the cheerful and inviting feel.\n- A QR code is included at the bottom left corner, likely for customers to scan for more information or to place an order.\n- The overall layout is clean and visually appealing, with clear pricing and descriptions for each item.\n\n### **Purpose**\nThis poster aims to promote spring-themed dishes, encouraging people to try these limited-time offerings and enjoy the flavors of the season. The use of bright colors and appetizing images makes it attractive to potential customers.",
+    "finalDescription": "This promotional poster advertises a spring-themed food festival titled \"Spring Good Food Festival, Spring Flavor Spreads Even More.\" It features soft pastel colors and cherry blossoms to evoke a lively spring atmosphere. Three dishes are highlighted: Chickweed Tofu Soup (15 Yuan), Original Green Rice Ball (5 Yuan), and Fried Bean Sprouts with Toona Sinensis (18 Yuan). The poster includes text emphasizing limited-edition flavors and encourages customers to \"Enjoy the First Taste of Spring Right Away.\" A phone number and QR code are provided for inquiries and orders. The design uses a gradient background and clear layout to make the offerings visually appealing and inviting. The purpose is to promote seasonal dishes and attract customers to try these special offerings."
+}

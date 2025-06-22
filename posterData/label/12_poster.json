@@ -1,0 +1,43 @@
+{
+    "image_name": "12_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.66650390625,
+                0.18479241877256317,
+                0.1669921875,
+                0.09070397111913357
+            ],
+            [
+                "\u8282",
+                0.9172704815864563
+            ]
+        ],
+        [
+            [
+                0.47314453125,
+                0.23127256317689532,
+                0.7099609375,
+                0.03925992779783394
+            ],
+            [
+                "MOTHERSDA",
+                0.9628518223762512
+            ]
+        ],
+        [
+            [
+                0.49560546875,
+                0.9000451263537906,
+                0.1259765625,
+                0.02572202166064982
+            ],
+            [
+                "05/11",
+                0.9996454119682312
+            ]
+        ]
+    ],
+    "description": "This image is a promotional graphic for Mother's Day. Here are the details:\n\n### Text Elements:\n1. **Top Section:**\n   - The text \"\u6bcd\u4eb2\u8282\" (Mother's Day) is prominently displayed in large, white Chinese characters.\n   - Below it, the English text \"MOTHERS DAY\" is written in a smaller font.\n\n2. **Middle Section:**\n   - The phrase \"\u4e00\u58f0\u5988\u5988 \u4e00\u7ebf\u7275\u6302\" is written in white Chinese characters, which translates to \"One call 'Mom,' one line of concern.\"\n   - The word \"love\" is written in a cursive, red font below this phrase.\n\n3. **Bottom Section:**\n   - The date \"05/11\" is displayed, indicating the date of Mother's Day.\n   - Below the date, the text \"\u4e00\u5207\u4f1f\u5927\u7686\u6e90\u4e8e\u5979\" is written in white Chinese characters, translating to \"All greatness originates from her.\"\n\n### Visual Elements:\n1. **Background:**\n   - The background is a gradient of soft pink and red hues, giving a warm and affectionate feel.\n\n2. **Heart Design:**\n   - A white, continuous line forms two interlocking heart shapes.\n   - Inside the hearts, there is a silhouette of a child hugging an adult, symbolizing the bond between a mother and child.\n\n3. **Flowers:**\n   - Pink carnations are scattered around the image, adding a touch of elegance and reinforcing the theme of love and appreciation.\n\n4. **Network Cable:**\n   - A network cable with a blue connector is integrated into the design, connecting to the heart shapes. This suggests the idea of staying connected with loved ones, possibly through technology.\n\n### Branding:\n- In the top left corner, there is a logo with the text \"\u5343\u56fe\" (Qiantu), which is a stock image platform.\n\n### Overall Theme:\nThe image conveys a message of love, connection, and gratitude towards mothers, combining traditional elements like flowers with modern concepts like digital connectivity. It is designed to evoke emotions and celebrate the special bond between mothers and their children.",
+    "finalDescription": "This image is a promotional graphic for Mother's Day, featuring both text and visual elements to convey themes of love, connection, and gratitude. The text includes \"\u6bcd\u4eb2\u8282\" (Mother's Day) in Chinese and English, along with phrases like \"\u4e00\u58f0\u5988\u5988 \u4e00\u7ebf\u7275\u6302\" (\"One call 'Mom,' one line of concern\") and \"\u4e00\u5207\u4f1f\u5927\u7686\u6e90\u4e8e\u5979\" (\"All greatness originates from her\"). The date \"05/11\" is also displayed. Visually, the design incorporates a warm pink/red gradient background, interlocking heart shapes with a mother-child silhouette, pink carnations symbolizing love, and a network cable representing digital connectivity. The logo of the stock image platform \"\u5343\u56fe\" (Qiantu) appears in the top left corner. The overall theme emphasizes the emotional bond between mothers and children, blending traditional and modern elements."
+}

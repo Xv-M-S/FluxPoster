@@ -1,0 +1,43 @@
+{
+    "image_name": "4_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.51806640625,
+                0.10943140794223827,
+                0.7060546875,
+                0.06272563176895307
+            ],
+            [
+                "\u8e0f\u6625\u8d4f\u6a31\u82b1",
+                0.9983075261116028
+            ]
+        ],
+        [
+            [
+                0.4423828125,
+                0.1680956678700361,
+                0.65234375,
+                0.04918772563176895
+            ],
+            [
+                "\u89e3\u9501\u6625\u65e5\u60ca\u559c",
+                0.9911730289459229
+            ]
+        ],
+        [
+            [
+                0.4990234375,
+                0.9246389891696751,
+                0.498046875,
+                0.013537906137184115
+            ],
+            [
+                "]\u65f6i\u53ef:2025-04 12 18.00-22:00",
+                0.9231723546981812
+            ]
+        ]
+    ],
+    "description": "This image is a promotional poster for a spring-themed event, likely related to cherry blossom viewing and a live stream. Here's a detailed description:\n\n### **Overall Theme:**\n- The poster has a vibrant and cheerful aesthetic, centered around the theme of spring and cherry blossoms (sakura).\n\n### **Text Elements:**\n1. **Main Title:**\n   - At the top, in bold white text with a red ribbon design, it reads:\n     - \"\u8e0f\u6625\u8d4f\u6a31\u82b1 \u89e3\u9501\u6625\u65e5\u60ca\u559c\" \n       - Translation: \"Spring Outing to Admire Cherry Blossoms: Unlock Spring Surprises\"\n   - Below that, in smaller white text on a pink ribbon:\n     - \"\u6625\u5b63\u8d4f\u82b1\u5b9d\u5178\u76f4\u64ad\u5927\u653e\u9001!\"\n       - Translation: \"Spring Flower Viewing Guide Live Stream Grand Release!\"\n\n2. **Side Text:**\n   - On the right side, in vertical pink text within a light pink box:\n     - \"\u76f4\u64ad\u95f4\u4e0b\u5355 \u4eab\u4e13\u5c5e\u4f18\u60e0\"\n       - Translation: \"Place Orders in the Live Stream Room to Enjoy Exclusive Discounts\"\n\n3. **Bottom Text:**\n   - At the bottom, in white text:\n     - \"\u5173\u6ce8\u76f4\u64ad\u95f4\u4e0b\u5355 \u5e26\u4f60\u6c89\u6d78\u5f0f\u611f\u53d7\u6a31\u82b1\u7f8e\"\n       - Translation: \"Follow the Live Stream Room and Place Orders to Immerse Yourself in the Beauty of Cherry Blossoms\"\n   - Below that, in smaller white text:\n     - \"\u76f4\u64ad\u65f6\u95f4: 2025\u00b704\u00b712 18:00-22:00\"\n       - Translation: \"Live Stream Time: April 12, 2025, 6:00 PM - 10:00 PM\"\n\n### **Visual Elements:**\n1. **Central Figure:**\n   - A woman is prominently featured in the center of the image.\n   - She is dressed in a traditional Japanese kimono, which is white with subtle floral patterns.\n   - She has a pink obi (kimono sash) tied around her waist.\n   - Her hair is styled with a crown of cherry blossoms, adding to the spring theme.\n\n2. **Background:**\n   - The background is a bright blue sky, evoking a clear and pleasant spring day.\n   - Pink cherry blossoms are scattered throughout the image, both as branches and falling petals, enhancing the seasonal atmosphere.\n\n3. **QR Code:**\n   - A QR code is placed near the bottom center of the image, likely for viewers to scan and access the live stream or related content.\n\n4. **Color Scheme:**\n   - The overall color palette is soft and pastel, dominated by shades of pink, white, and blue, which complements the cherry blossom theme.\n\n### **Purpose:**\n- The poster is promoting a live stream event focused on cherry blossom viewing, offering exclusive discounts for viewers who place orders during the broadcast.\n- It aims to attract an audience interested in spring activities, traditional aesthetics, and potential shopping opportunities.\n\n### **Additional Notes:**\n- The event date (April 12, 2025) suggests this is a planned future event.\n- The combination of cultural elements (kimono, cherry blossoms) and modern marketing techniques (live streaming, QR codes) creates an engaging and contemporary appeal. \n\nThis poster effectively combines visual beauty with informative text to promote an enticing spring event.",
+    "finalDescription": "The promotional poster advertises a spring-themed live stream event centered on cherry blossom viewing, scheduled for April 12, 2025, from 6:00 PM to 10:00 PM. The main title translates to \"Spring Outing to Admire Cherry Blossoms: Unlock Spring Surprises,\" with additional text encouraging viewers to place orders during the live stream for exclusive discounts. The central image features a woman in a traditional Japanese kimono with cherry blossoms in her hair, set against a vibrant spring background of a blue sky and pink petals. A QR code is included for accessing the live stream, and the design uses soft pastel colors to enhance the seasonal theme. The event combines cultural elements with modern marketing strategies to attract an audience interested in both spring festivities and shopping opportunities."
+}

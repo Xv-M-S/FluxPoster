@@ -1,0 +1,31 @@
+{
+    "image_name": "26_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.37353515625,
+                0.337472607742878,
+                0.2470703125,
+                0.036523009495982466
+            ],
+            [
+                "\u65e5\u6b22\u4e50\u7ae5\u884c",
+                0.9878780245780945
+            ]
+        ],
+        [
+            [
+                0.3125,
+                0.3739956172388605,
+                0.12890625,
+                0.029218407596785977
+            ],
+            [
+                "\u6e38\u8ba1\u5212",
+                0.9988996386528015
+            ]
+        ]
+    ],
+    "description": "This image is a colorful and vibrant illustration with a springtime theme. Here's a detailed description:\n\n### Title and Text\n- The main title at the top reads \"\u6625\u65e5\u6b22\u4e50\u7ae5\u884c\" which translates to \"Spring Joyful Children's Trip.\"\n- Below the title, there is a subtitle that says \"\u4e09\u6708\u6625\u6e38\u8ba1\u5212,\" meaning \"March Spring Outing Plan.\"\n- The English text under the Chinese subtitle reads \"MARCH SPRING OUTING PLAN.\"\n\n### Characters\n- There are four characters depicted in the image:\n  - A man wearing a blue shirt and yellow pants.\n  - A woman wearing a purple shirt and an orange skirt.\n  - A child holding hands with the woman, dressed in a red outfit.\n  - Another character, possibly a boy, is shown flying a kite. He is wearing a green shirt and dark pants.\n\n### Elements and Decorations\n- **Flowers and Plants:** Various colorful flowers and plants surround the characters, adding to the springtime atmosphere. The flowers include pink, yellow, and white blooms with green leaves.\n- **Kite:** The boy is flying a kite, which has a simple design with a string extending from it.\n- **Sun:** A cheerful sun with a smiling face is positioned near the top right corner.\n- **Clouds:** Small, fluffy clouds are scattered around, enhancing the bright and pleasant mood.\n- **Frame:** The entire scene is framed within a light blue border, giving it a picture-like appearance.\n\n### Color Scheme\n- The overall color scheme is bright and lively, featuring a lot of pastel and primary colors such as blue, green, pink, yellow, and white. This choice of colors contributes to the cheerful and inviting feel of the image.\n\n### Theme\n- The theme of the image is clearly centered around a spring outing or trip, likely aimed at families or children. The elements like the kite, flowers, and the happy expressions of the characters all contribute to this theme.\n\n### Purpose\n- This image could be used for promotional purposes, such as advertising a spring event, a family outing plan, or a children's activity during the spring season.\n\nOverall, the image is designed to evoke feelings of joy, warmth, and excitement associated with springtime activities.",
+    "finalDescription": "This image is a vibrant spring-themed illustration titled \"\u6625\u65e5\u6b22\u4e50\u7ae5\u884c\" (\"Spring Joyful Children's Trip\") with the subtitle \"\u4e09\u6708\u6625\u6e38\u8ba1\u5212\" (\"March Spring Outing Plan\"). It features four characters\u2014a man, a woman, a child holding the woman's hand, and a boy flying a kite\u2014surrounded by colorful flowers, plants, and a cheerful sun with fluffy clouds. The scene is framed by a light blue border and uses a bright color palette to convey joy and warmth. The theme focuses on family or children's spring outings, making it suitable for promoting spring events or activities. The overall purpose is to evoke excitement and happiness associated with springtime."
+}

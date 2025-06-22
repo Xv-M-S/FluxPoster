@@ -37,7 +37,7 @@ class ControlNetFlux(nn.Module):
     """
     _supports_gradient_checkpointing = True
 
-    def __init__(self, params: FluxParams, controlnet_depth=2):
+    def __init__(self, params: FluxParams, controlnet_depth=2, device="cuda"):
         super().__init__()
         self.params = params
         self.in_channels = params.in_channels # 64
@@ -53,6 +53,7 @@ class ControlNetFlux(nn.Module):
         self.num_heads = params.num_heads # 24
         self.pe_embedder = EmbedND(dim=pe_dim, theta=params.theta, axes_dim=params.axes_dim)
         self.img_in = nn.Linear(self.in_channels, self.hidden_size, bias=True)
+        # self.img_in.to(device)
         self.time_in = MLPEmbedder(in_dim=256, hidden_dim=self.hidden_size)
         self.guided_hint_in = nn.Linear(1280, self.hidden_size)
         self.vector_in = MLPEmbedder(params.vec_in_dim, self.hidden_size)
@@ -170,16 +171,21 @@ class ControlNetFlux(nn.Module):
         guided_hint: Tensor | None = None,
     ) -> Tensor:
         if img.ndim != 3 or txt.ndim != 3:
-            raise ValueError("Input img and txt tensors must have 3 dimensions.")
+            print(f"img.ndim={img.ndim}, txt.ndim={txt.ndim}")
+            # raise ValueError("Input img and txt tensors must have 3 dimensions.")
 
         # image 输入置为 0 
-        image = torch.zeros_like(img).to(img.device)
+        image = torch.zeros_like(img).to(img.device).to(img.dtype)
+        # print(f"img.shape={image.dtype}")
+        # print(f"image.shape={image.shape}")
         img = self.img_in(image) # img  (1,1024,64)
 
         # 文本的 canny 控制
         controlnet_cond = self.input_hint_block(controlnet_cond)
         controlnet_cond = rearrange(controlnet_cond, "b c (h ph) (w pw) -> b (h w) (c ph pw)", ph=2, pw=2)
         controlnet_cond = self.pos_embed_input(controlnet_cond)
+        # print(f"controlnet_cond: {controlnet_cond.shape}")
+        # print(f"img: {img.shape}")
         img = img + controlnet_cond
 
         # guided_hint 加入

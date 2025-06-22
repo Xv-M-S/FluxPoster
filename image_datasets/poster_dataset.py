@@ -8,7 +8,7 @@ import json
 import random
 import cv2
 
-
+DEBUG = True
 def canny_processor(image, low_threshold=100, high_threshold=200):
     image = np.array(image)
     image = cv2.Canny(image, low_threshold, high_threshold)
@@ -17,38 +17,46 @@ def canny_processor(image, low_threshold=100, high_threshold=200):
     canny_image = Image.fromarray(image)
     return canny_image
 
+
 def resize_image(image, target_width, target_height, output_path=None):
-    # 获取图片的原始宽度和高度
-    original_width, original_height = image.size
-    
-    # 计算缩放比例
-    scale_width = target_width / original_width
-    scale_height = target_height / original_height
-    scale = min(scale_width, scale_height)  # 选择较小的缩放比例
-    
-    # 计算调整后的宽度和高度
-    new_width = int(original_width * scale)
-    new_height = int(original_height * scale)
-    
-    # 调整图片大小
-    resized_image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
-    
-    # 创建一个目标尺寸的黑色背景图像
-    background = Image.new('RGB', (target_width, target_height), (255, 255, 255))
-    
-    # 计算粘贴位置，使图像居中
-    paste_x = (target_width - new_width) // 2
-    paste_y = (target_height - new_height) // 2
-    
-    # 将调整大小后的图像粘贴到背景图像上
-    background.paste(resized_image, (paste_x, paste_y))
-    
-    # 如果需要，可以将调整后的图片保存到指定路径
-    if output_path:
-        background.save(output_path)
-    # print(f"backgrround:{background.size}")
-    
-    return background
+    debilize = False
+    if debilize:
+        # 获取图片的原始宽度和高度
+        original_width, original_height = image.size
+        
+        # 计算缩放比例
+        scale_width = target_width / original_width
+        scale_height = target_height / original_height
+        scale = min(scale_width, scale_height)  # 选择较小的缩放比例
+        
+        # 计算调整后的宽度和高度
+        new_width = int(original_width * scale)
+        new_height = int(original_height * scale)
+        
+        # 调整图片大小
+        resized_image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
+        
+        # 创建一个目标尺寸的黑色背景图像
+        background = Image.new('RGB', (target_width, target_height), (255, 255, 255))
+        
+        # 计算粘贴位置，使图像居中
+        paste_x = (target_width - new_width) // 2
+        paste_y = (target_height - new_height) // 2
+        
+        # 将调整大小后的图像粘贴到背景图像上
+        background.paste(resized_image, (paste_x, paste_y))
+        
+        # 如果需要，可以将调整后的图片保存到指定路径
+        if output_path:
+            background.save(output_path)
+        # print(f"backgrround:{background.size}")
+        
+        return background,scale
+    else:
+        # 调整图片大小
+        resized_image = image.resize((target_width, target_height), Image.Resampling.LANCZOS)
+        return resized_image,1 # 1 没有用
+
 
 # 由于字符串不可堆叠，所以需要自定义collate_fn
 def custom_collate_fn(batch):
@@ -64,6 +72,9 @@ def custom_collate_fn(batch):
     
     return imgs, hints, mask_imgs, mask_hints, raw_captions, captions, ocr_results
 
+
+
+
 class CustomImageDataset(Dataset):
     def __init__(self, raw_img_dir, mask_img_dir, label_dir, img_size=(512,512)):
         self.images = [os.path.join(raw_img_dir, i) for i in os.listdir(raw_img_dir) if '.jpg' in i or '.png' in i]
@@ -78,9 +89,10 @@ class CustomImageDataset(Dataset):
     def __getitem__(self, idx):
         # raw_image 处理
         img = Image.open(self.images[idx])
-        img = resize_image(img, self.img_size[0], self.img_size[1])
+        img, scale = resize_image(img, self.img_size[0], self.img_size[1])
         hint = canny_processor(img) # 获取边缘图
 
+        # img -> tensor
         img = torch.from_numpy((np.array(img) / 127.5) - 1)
         img = img.permute(2, 0, 1)
         hint = torch.from_numpy((np.array(hint) / 127.5) - 1)
@@ -90,22 +102,20 @@ class CustomImageDataset(Dataset):
         img_name = self.images[idx].split('/')[-1]
         base_name = img_name[:img_name.rfind('.')]
         mask_img = Image.open(os.path.join(self.mask_img_dir, base_name + '.png'))
-        mask_img = resize_image(mask_img, self.img_size[0], self.img_size[1])
+        mask_img, _  = resize_image(mask_img, self.img_size[0], self.img_size[1])
         mask_hint = canny_processor(mask_img) # 获取边缘图
-
-        # print(f"mask_img.shape={torch.from_numpy((np.array(mask_img))).shape}, mask_hint.shape={torch.from_numpy((np.array(mask_hint))).shape}")
-
+        
+        # img -> tensor
         mask_img = torch.from_numpy((np.array(mask_img) / 127.5) - 1)
         mask_hint = torch.from_numpy((np.array(mask_hint) / 127.5) - 1)
-        # mask_img = mask_img.permute(2, 0, 1)
-        mask_img = mask_img.unsqueeze(0)
+        mask_img = mask_img.permute(2, 0, 1)
         mask_hint = mask_hint.permute(2, 0, 1)
 
         # 获取标注
         jsf = json.load(open(os.path.join(self.label_dir, base_name + '.json')))
         raw_caption = jsf['description']
         caption = jsf['finalDescription']
-        ocr_result = jsf['ocr_result']
+        ocr_result = jsf['ocr_result']  # json导入的数据就是list
 
         return img, hint, mask_img, mask_hint, raw_caption, caption, ocr_result
 

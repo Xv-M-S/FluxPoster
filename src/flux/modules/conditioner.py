@@ -19,7 +19,7 @@ class HFEmbedder(nn.Module):
 
         self.hf_module = self.hf_module.eval().requires_grad_(False)
 
-    def forward(self, text: list[str]) -> Tensor:
+    def forward(self, text: list[str], detail = False) -> Tensor:
         batch_encoding = self.tokenizer(
             text,
             truncation=True,
@@ -35,4 +35,6 @@ class HFEmbedder(nn.Module):
             attention_mask=None,
             output_hidden_states=False,
         )
+        if self.is_clip and detail:
+            return outputs["pooler_output"], outputs["last_hidden_state"], batch_encoding
         return outputs[self.output_key]

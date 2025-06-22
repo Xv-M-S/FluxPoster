@@ -114,7 +114,7 @@ def preProcess(img, hint, mask_img, mask_hint, raw_caption, caption, ocr_result)
     texts = []
     for line in ocr_result:
         bboxes.append(line[0])
-        print(line)
+        # print(line)
         texts.append(line[1][0])
 
     if len(bboxes) == 0:

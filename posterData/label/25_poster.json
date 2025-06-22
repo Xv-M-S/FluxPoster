@@ -1,0 +1,31 @@
+{
+    "image_name": "25_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.71875,
+                0.5900270758122743,
+                0.21875,
+                0.03023465703971119
+            ],
+            [
+                "19.9  #",
+                0.9356646537780762
+            ]
+        ],
+        [
+            [
+                0.1806640625,
+                0.9088447653429603,
+                0.15234375,
+                0.026173285198555957
+            ],
+            [
+                "\u514d\u8d39\u559d",
+                0.964634120464325
+            ]
+        ]
+    ],
+    "description": "This image is an advertisement for a green-colored beverage, likely an avocado milk tea or smoothie. Here are the details:\n\n### **Visual Elements:**\n1. **Main Product:**\n   - The central focus is a cup of creamy, green-colored drink topped with whipped cream in a similar green hue.\n   - A striped straw (green and white) is inserted into the cup.\n\n2. **Ingredients:**\n   - Fresh avocados are displayed around the cup, both whole and halved, emphasizing the main ingredient.\n   - Small dollops of the green cream are also placed near the cup for visual appeal.\n\n3. **Color Scheme:**\n   - The overall color theme is predominantly green, reflecting the natural and fresh aspect of the product.\n   - The background is a gradient of dark to light green, creating a cohesive and refreshing look.\n\n4. **Typography:**\n   - The text is written in Chinese characters, with some phrases highlighted in bold or different colors for emphasis.\n   - Key phrases include:\n     - \"\u501f\u4e00\u676f(\u6625\u8272) * \u659f\u4e00\u676f\u9999\u751c\" (Roughly translates to \"Borrow a cup of spring colors * Pour a cup of sweetness\").\n     - \"\u70c2\u6f2b\u6625\u65e5 \u9082\u9005\u751c\u871c\" (Romantic spring day, encounter sweetness).\n     - \"\u7ec6\u817b\u9c9c\u9187 \u6d53\u800c\u4e0d\u817b\" (Smooth and fresh, rich but not greasy).\n\n5. **Promotional Details:**\n   - A special offer is advertised: \"\u9650\u65f6\u7279\u60e0 \u4e70\u4e00\u676f\u9001\u4e00\u676f\" (Limited-time offer: Buy one get one free) at a price of \u00a519.9.\n   - The promotion period is specified as \"3\u670810\u65e5-3\u670820\u65e5\" (March 10th to March 20th).\n\n6. **Additional Information:**\n   - The drink is described as \"\u7eaf\u5929\u7136 \u7eaf\u624b\u5de5 \u9c9c\u751c\u723d\u53e3\" (Pure natural, pure handmade, fresh, sweet, and refreshing).\n   - A QR code is provided in the bottom right corner for online booking or further information.\n   - The hashtag \"#\u6625\u65e5\u5fc5\u70b9#\" (Must-try in spring) is included to encourage seasonal consumption.\n\n### **Overall Impression:**\nThe advertisement effectively uses vibrant visuals and appealing text to promote a fresh, natural, and delicious avocado-based drink. The emphasis on springtime and the limited-time offer creates a sense of urgency and excitement for potential customers.",
+    "finalDescription": "This advertisement promotes a green-colored avocado milk tea or smoothie, emphasizing its natural and fresh qualities. The visual centerpiece is a creamy green drink with whipped cream, accompanied by fresh avocados and small dollops of the beverage for appeal. The color scheme is predominantly green, reflecting the product's freshness, while Chinese text highlights phrases like \"Borrow a cup of spring colors,\" \"Romantic spring day,\" and \"Smooth and fresh.\" A limited-time offer of \"Buy one get one free\" is available for \u00a519.9 from March 10th to March 20th. The drink is described as pure, handmade, and refreshing, with a QR code provided for more information. The hashtag \"#\u6625\u65e5\u5fc5\u70b9#\" encourages seasonal consumption, creating urgency and excitement for customers."
+}

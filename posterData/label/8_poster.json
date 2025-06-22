@@ -1,0 +1,79 @@
+{
+    "image_name": "8_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.51220703125,
+                0.17148014440433212,
+                0.6943359375,
+                0.05324909747292419
+            ],
+            [
+                "QING MING",
+                0.9685969948768616
+            ]
+        ],
+        [
+            [
+                0.48876953125,
+                0.5708483754512635,
+                0.3662109375,
+                0.02888086642599278
+            ],
+            [
+                "2025\u6e05\u660e\u8282",
+                0.9988719820976257
+            ]
+        ],
+        [
+            [
+                0.3291015625,
+                0.6920126353790613,
+                0.17578125,
+                0.03023465703971119
+            ],
+            [
+                "04.04",
+                0.9998356699943542
+            ]
+        ],
+        [
+            [
+                0.6455078125,
+                0.6915613718411552,
+                0.1796875,
+                0.03384476534296029
+            ],
+            [
+                "04.06",
+                0.999897301197052
+            ]
+        ],
+        [
+            [
+                0.498046875,
+                0.9395306859205776,
+                0.28125,
+                0.02527075812274368
+            ],
+            [
+                "00000000",
+                0.9973143935203552
+            ]
+        ],
+        [
+            [
+                0.3134765625,
+                0.9426895306859205,
+                0.04296875,
+                0.01263537906137184
+            ],
+            [
+                "021",
+                0.9634847640991211
+            ]
+        ]
+    ],
+    "description": "This image is a promotional poster for the Qingming Festival (also known as Tomb-Sweeping Day) in 2025. Here are the details:\n\n### **Design Elements:**\n1. **Background and Theme:**\n   - The background features a light green, textured design resembling fabric or paper, giving it a traditional and natural feel.\n   - The overall theme is springtime, with elements like flying birds (likely swallows), green leaves, and soft curves that evoke a sense of renewal and vitality.\n\n2. **Text Content:**\n   - **Title:** \n     - At the top, it reads \"\u4f20\u7edf\u4e8c\u5341\u56db\u8282\u6c14\" (Traditional Twenty-Four Solar Terms) followed by \"QING MING\" in large, bold letters.\n     - Below that, there's a poetic description: \"\u6625\u5149\u660e\u5a9a\u5230\u6e05\u660e \u7ec6\u96e8\u7eb7\u98de\u6da6\u5927\u5730\" which translates to \"Spring shines brightly until Qingming; drizzling rain moistens the earth.\"\n\n   - **Main Message:**\n     - The central text announces the Qingming Festival holiday schedule for 2025: \"2025\u6e05\u660e\u8282 \u653e\u5047\u901a\u77e5\u5b89\u6392\" (2025 Qingming Festival Holiday Notice Arrangement).\n     - The dates are specified as \"04.04 \u2014\u2014 04.06,\" indicating a three-day holiday from April 4th (Friday) to April 6th (Sunday).\n\n   - **Contact Information:**\n     - At the bottom, there is contact information:\n       - Location: \"\u4e2d\u56fd\u00b7\u4e0a\u6d77 \u6d66\u4e1c\u65b0\u533a888\u53f7\" (China\u00b7Shanghai, No. 888, Pudong New Area).\n       - Phone number: \"021 0000 0000.\"\n       - A QR code is also present with the text \"\u626b\u4e00\u626b \u4e86\u89e3\u8be6\u60c5\" (Scan to learn more details).\n\n3. **Visual Elements:**\n   - Two black-and-white birds (possibly swallows) are depicted mid-flight, symbolizing freedom and the arrival of spring.\n   - Green leaves and curved lines add a dynamic and natural touch to the design.\n\n4. **Branding:**\n   - In the top left corner, there is a logo with the text \"\u5343\u56fe\" (Qiantu), likely the name of the design platform or company responsible for creating this poster.\n\n### **Purpose:**\nThe poster serves as an official announcement for the Qingming Festival holiday in 2025, providing key information such as the dates, location, and contact details. It also promotes a sense of cultural tradition and natural beauty associated with the festival.\n\n### **Overall Impression:**\nThe design is clean, elegant, and culturally rich, effectively combining traditional Chinese aesthetics with modern graphic design elements. It successfully conveys the essence of the Qingming Festival while providing practical information for viewers.",
+    "finalDescription": "This promotional poster for the 2025 Qingming Festival (Tomb-Sweeping Day) features a light green, textured background with spring-themed elements like flying birds, green leaves, and soft curves. The text highlights the festival's holiday schedule from April 4th to April 6th, along with poetic descriptions of spring and drizzling rain. It includes contact information for a location in Shanghai and a QR code for more details. The design incorporates branding from \"Qiantu\" and emphasizes cultural tradition and natural beauty. The purpose is to announce the holiday while celebrating the festival's cultural significance through an elegant blend of traditional and modern design elements."
+}

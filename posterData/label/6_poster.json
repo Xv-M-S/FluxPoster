@@ -1,0 +1,79 @@
+{
+    "image_name": "6_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.25537109375,
+                0.12229241877256318,
+                0.2705078125,
+                0.021660649819494584
+            ],
+            [
+                "QING MING",
+                0.9864025115966797
+            ]
+        ],
+        [
+            [
+                0.2353515625,
+                0.14688628158844766,
+                0.23046875,
+                0.021209386281588447
+            ],
+            [
+                "FESTIVAL",
+                0.9986834526062012
+            ]
+        ],
+        [
+            [
+                0.6943359375,
+                0.7800090252707581,
+                0.34765625,
+                0.043772563176895304
+            ],
+            [
+                "\u6e05\u660e\u65f6\u8282",
+                0.99952232837677
+            ]
+        ],
+        [
+            [
+                0.55908203125,
+                0.8212996389891697,
+                0.0966796875,
+                0.019855595667870037
+            ],
+            [
+                "\u660e\u96e8",
+                0.9039555788040161
+            ]
+        ],
+        [
+            [
+                0.53369140625,
+                0.8878610108303249,
+                0.1513671875,
+                0.01759927797833935
+            ],
+            [
+                "108-168m\u00b2",
+                0.9352878928184509
+            ]
+        ],
+        [
+            [
+                0.40185546875,
+                0.953745487364621,
+                0.2939453125,
+                0.02211191335740072
+            ],
+            [
+                "021-0000-0000",
+                0.9993917942047119
+            ]
+        ]
+    ],
+    "description": "This image is a promotional poster for the Qing Ming Festival, also known as Tomb-Sweeping Day, which is a traditional Chinese holiday. Here's a detailed description of the elements in the picture:\n\n### 1. **Title and Theme:**\n   - The top section prominently displays \"QING MING FESTIVAL\" in English, indicating the theme of the poster.\n   - Below that, in larger Chinese characters, it says \"\u6e05\u660e\u65f6\u8282,\" which translates to \"Qing Ming Season.\"\n\n### 2. **Artistic Design:**\n   - The central design features a large, stylized calligraphic character \"\u6e05\" (qing), which means \"clear\" or \"pure.\" This character is artistically rendered with brushstroke effects in shades of green and blue, giving it a traditional yet modern feel.\n   - Within the calligraphic design, there are smaller illustrations:\n     - A small figure riding a cow, reminiscent of traditional Chinese pastoral scenes.\n     - A bridge over water, suggesting a serene natural setting.\n   - Two swallows are depicted flying around the calligraphy, adding a sense of liveliness and springtime ambiance.\n\n### 3. **Background:**\n   - The background has a light beige texture resembling traditional Chinese paper or fabric, enhancing the cultural aesthetic.\n   - Subtle mountain silhouettes are visible in the background, contributing to the overall tranquil and natural atmosphere.\n\n### 4. **Textual Information:**\n   - Below the main design, there is additional text in Chinese:\n     - \"\u6e05\u660e\u96e8\u843d\uff0c\u9752\u70df\u8885\u8885\" translates to \"Rain falls during Qing Ming, and incense smoke rises gently,\" evoking the typical weather and customs of the festival.\n   - Further down, there is information about real estate:\n     - \"108-168\u33a1 \u4e66\u9999\u8c6a\u5b85 \u6bd7\u90bb\u5546\u5708\" indicates that the advertisement is promoting luxury homes ranging from 108 to 168 square meters, located near commercial areas.\n     - \"\u606d\u8fce\u54c1\u9274 \u706b\u70ed\u9500\u552e\u4e2d\" invites viewers to come and appreciate the properties, noting that they are currently on hot sale.\n\n### 5. **Contact Information:**\n   - At the bottom, there is contact information:\n     - A phone number: \"021-0000-0000.\"\n     - An address: \"\u4e0a\u6d77\u5e02\u6d66\u4e1c\u65b0\u533a\u78a7\u6ce2\u8def666\u53f7\" (No. 666, Bibo Road, Pudong New Area, Shanghai).\n     - A website link: \"https://www.58pic.com/\" (though this appears to be a placeholder or stock image reference).\n\n### 6. **Branding:**\n   - In the top left corner, there is a logo with the text \"\u5343\u56fe | \u5343\u56fe\u5730\u4ea7,\" which likely refers to the company or platform responsible for the design or the real estate being advertised.\n\n### Overall Impression:\nThe poster effectively combines traditional Chinese cultural elements with modern design techniques to create an appealing visual that celebrates the Qing Ming Festival while promoting real estate. The use of soft colors, natural imagery, and elegant calligraphy contributes to a harmonious and inviting aesthetic.",
+    "finalDescription": "This promotional poster for the Qing Ming Festival, or Tomb-Sweeping Day, blends traditional Chinese cultural elements with modern design. The title \"QING MING FESTIVAL\" is displayed in English, alongside \"\u6e05\u660e\u65f6\u8282\" in Chinese. The central focus is a stylized calligraphic character \"\u6e05\" (meaning \"clear\" or \"pure\"), incorporating pastoral scenes like a figure riding a cow, a bridge, and flying swallows. The light beige background, resembling traditional paper, features subtle mountain silhouettes, enhancing the tranquil atmosphere. Textual elements describe the festival's weather and customs, while also promoting luxury real estate ranging from 108-168 square meters near commercial areas. Contact details, including a phone number, address, and website, are provided at the bottom. The poster concludes with branding from \"\u5343\u56fe | \u5343\u56fe\u5730\u4ea7.\" Overall, it harmoniously celebrates the festival while advertising properties."
+}

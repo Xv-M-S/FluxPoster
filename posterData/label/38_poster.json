@@ -1,0 +1,43 @@
+{
+    "image_name": "38_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.49560546875,
+                0.21547833935018051,
+                0.7763671875,
+                0.15568592057761732
+            ],
+            [
+                "\u6bcd\u4eb2\u8282",
+                0.9984779357910156
+            ]
+        ],
+        [
+            [
+                0.5087890625,
+                0.3348375451263538,
+                0.578125,
+                0.13357400722021662
+            ],
+            [
+                "\u5feb\u4e50",
+                0.9180460572242737
+            ]
+        ],
+        [
+            [
+                0.4990234375,
+                0.41155234657039713,
+                0.466796875,
+                0.01444043321299639
+            ],
+            [
+                "HAPPY MOTHER'S DAY",
+                0.9682794213294983
+            ]
+        ]
+    ],
+    "description": "This image is a cheerful and colorful illustration celebrating Mother's Day. Here are the details:\n\n### Text:\n- At the top, there are Chinese characters that read \"\u6bcd\u4eb2\u8282\u5feb\u4e50,\" which translates to \"Happy Mother's Day.\"\n- Below the Chinese text, there is an English translation: \"HAPPY MOTHER'S DAY.\"\n\n### Illustration:\n1. **Main Characters:**\n   - A mother is depicted holding three children close to her.\n   - The mother has long brown hair, rosy cheeks, and is wearing a yellow shirt with horizontal stripes.\n   - The children are also drawn with rosy cheeks and happy expressions.\n     - The child on the left is holding a drawing with crayons.\n     - The child in the middle is wearing a blue striped shirt.\n     - The child on the right is holding a drawing with a blue crayon.\n\n2. **Background Elements:**\n   - At the top of the image, there is a clothesline with two drawings pinned to it using colorful clothespins.\n     - One drawing shows a figure with spiky hair.\n     - The other drawing shows two figures, one wearing a red hat and the other with blonde hair.\n   - There are small decorative elements like sunbursts near the text.\n\n### Style:\n- The overall style is cartoonish and hand-drawn, with soft colors and a warm, inviting feel.\n- The use of bright colors and simple shapes makes the image appealing and easy to understand.\n\n### Additional Text:\n- In the middle-right section, there is some smaller Chinese text that appears to be a disclaimer or copyright notice, indicating that the image is from a platform called \"\u5343\u56fe\" (QianTu), which is a marketing and creative service platform. It mentions that commercial use requires authorization.\n\n### Overall Impression:\nThe image conveys a sense of warmth, love, and family bonding, perfectly capturing the essence of Mother's Day. It is designed to evoke positive emotions and celebrate the special relationship between a mother and her children.",
+    "finalDescription": "This illustration is a vibrant and cheerful celebration of Mother's Day, featuring both Chinese (\"\u6bcd\u4eb2\u8282\u5feb\u4e50\") and English (\"HAPPY MOTHER'S DAY\") text. The main scene depicts a mother with long brown hair and three happy children, one holding a drawing with crayons. The background includes a clothesline with additional drawings and decorative sunbursts. The cartoonish, hand-drawn style uses bright colors to create a warm, inviting atmosphere. A small disclaimer notes the image originates from the platform \"\u5343\u56fe\" (QianTu) and requires authorization for commercial use. Overall, the image emphasizes family bonding and love, capturing the spirit of Mother's Day."
+}

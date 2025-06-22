@@ -1,0 +1,31 @@
+{
+    "image_name": "45_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.68994140625,
+                0.8152075812274369,
+                0.5087890625,
+                0.07355595667870037
+            ],
+            [
+                "\u81f4\u4f1f\u5927\u7684\u5979",
+                0.9515430331230164
+            ]
+        ],
+        [
+            [
+                0.37939453125,
+                0.9465252707581228,
+                0.2861328125,
+                0.028429602888086644
+            ],
+            [
+                "0000-0000",
+                0.9990279078483582
+            ]
+        ]
+    ],
+    "description": "This image is a beautifully illustrated poster celebrating Mother's Day. Here are the details:\n\n### Visual Elements:\n1. **Illustration Style**:\n   - The artwork is in an anime or manga style, featuring soft, pastel colors and detailed shading.\n   - The characters have a gentle and serene expression, evoking warmth and affection.\n\n2. **Characters**:\n   - The illustration depicts two characters: an adult (presumably the mother) and a child.\n   - Both characters have their eyes closed, with the adult leaning her head gently on the child's head, symbolizing love and care.\n   - Their hair is styled in a way that blends harmoniously with the surrounding floral elements.\n\n3. **Floral Design**:\n   - The background and foreground are filled with blooming flowers, predominantly in shades of pink and white.\n   - The flowers add a sense of beauty and tranquility to the scene.\n\n4. **Text Elements**:\n   - The text \"MOTHER'S DAY\" is written vertically on the left side in a stylized font.\n   - At the bottom, there is Chinese text that translates to \"To the great her, 5.14 Mother's Day! Happy Mother's Day!\"\n   - Additional information includes a phone number, project address, and website URL, suggesting this might be part of a real estate promotion.\n\n5. **Color Palette**:\n   - The overall color scheme is soft and warm, dominated by pinks, whites, and light yellows, creating a gentle and loving atmosphere.\n\n### Textual Information:\n- **Main Message**: \"\u81f4\u4f1f\u5927\u7684\u5979 5.14 Mother's Day!\" which translates to \"To the great her, 5.14 Mother's Day!\"\n- **Contact Information**: \n  - Phone Number: 021-0000-0000\n  - Project Address: \u4e0a\u6d77\u5e02\u6d66\u4e1c\u65b0\u533a\u78a7\u6ce2\u8def666\u53f7\u5343\u56fe\u5730\u4ea7 (No. 666, Bibo Road, Pudong New Area, Shanghai)\n  - Website: https://www.58pic.com/\n\n### Purpose:\n- The poster is likely used for a Mother's Day celebration, possibly as part of a marketing campaign for a real estate project, aiming to evoke emotions of love, care, and family bonding.\n\nOverall, the image is designed to be visually appealing and emotionally resonant, perfect for a Mother's Day theme.",
+    "finalDescription": "This poster celebrates Mother's Day with an anime/manga-style illustration featuring soft pastel colors and detailed shading. It depicts a serene mother and child with their eyes closed, symbolizing love and care, surrounded by pink and white flowers for added tranquility. The text \"MOTHER'S DAY\" appears vertically on the left, while Chinese text at the bottom translates to \"To the great her, 5.14 Mother's Day! Happy Mother's Day!\" Contact details suggest this is part of a real estate marketing campaign, including a phone number, project address in Shanghai, and website URL. The soft color palette and floral design create a warm, loving atmosphere, making the poster emotionally resonant and suitable for Mother's Day."
+}

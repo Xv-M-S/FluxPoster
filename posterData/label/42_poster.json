@@ -1,0 +1,67 @@
+{
+    "image_name": "42_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.3876953125,
+                0.5004512635379061,
+                0.078125,
+                0.042418772563176894
+            ],
+            [
+                "\u56fe",
+                0.9979975819587708
+            ]
+        ],
+        [
+            [
+                0.5048828125,
+                0.6525270758122743,
+                0.28125,
+                0.048736462093862815
+            ],
+            [
+                "\u7389\u5e86\u8282",
+                0.9739596247673035
+            ]
+        ],
+        [
+            [
+                0.5009765625,
+                0.7071299638989169,
+                0.484375,
+                0.02075812274368231
+            ],
+            [
+                "\u70ed\u70c8\u795d\u8d3a\u4e2d\u534e\u4eba\u6c11\u5171\u548c\u56fd",
+                0.9802133440971375
+            ]
+        ],
+        [
+            [
+                0.50146484375,
+                0.733754512635379,
+                0.2255859375,
+                0.021660649819494584
+            ],
+            [
+                "\u6210\u7acb75\u5468\u5e74",
+                0.9998159408569336
+            ]
+        ],
+        [
+            [
+                0.4990234375,
+                0.7766245487364621,
+                0.29296875,
+                0.027978339350180504
+            ],
+            [
+                "1949-2024",
+                0.9998867511749268
+            ]
+        ]
+    ],
+    "description": "This image is a celebratory graphic for the National Day of the People's Republic of China. Here are the details:\n\n### Background and Design:\n- **Background**: The background features a bright blue sky with fluffy white clouds, giving a festive and uplifting feel.\n- **Cloud Shapes**: The clouds are creatively shaped to form the characters \"\u56fd\u5e86\" (Gu\u00f3q\u00ecng), which means \"National Day\" in Chinese.\n\n### Text Elements:\n- **Main Title**: The text \"\u56fd\u5e86\u8282\" (National Day) is prominently displayed in the center.\n- **Celebration Message**: Below the main title, there is a message that reads: \"\u70ed\u70c8\u795d\u8d3a\u4e2d\u534e\u4eba\u6c11\u5171\u548c\u56fd\u6210\u7acb75\u5468\u5e74\" (Warmly congratulate the 75th anniversary of the founding of the People's Republic of China).\n- **Years**: The years \"1949-2024\" are included, indicating the span from the founding of the PRC to the current year being celebrated.\n\n### Decorative Elements:\n- **Heart Shape**: A dotted line forms a heart shape around the cloud-shaped characters, adding a touch of affection and celebration.\n- **Arrows**: At the bottom, there are three cloud shapes resembling arrows pointing upwards, symbolizing progress and advancement.\n- **Stars**: Small stars flank the phrase \"\u6210\u7acb75\u5468\u5e74\" (75th anniversary), emphasizing the significance of the milestone.\n\n### Overall Theme:\nThe image conveys a sense of patriotism and celebration, marking the 75th anniversary of the founding of the People's Republic of China. The use of bright colors, clouds, and symbolic shapes creates a joyful and commemorative atmosphere.",
+    "finalDescription": "This graphic celebrates the 75th National Day of the People's Republic of China with a vibrant design. The background features a blue sky and white clouds shaped into the characters \"\u56fd\u5e86\" (National Day). The central text reads \"\u56fd\u5e86\u8282\" (National Day), accompanied by a congratulatory message marking the anniversary from 1949 to 2024. Decorative elements include a heart-shaped outline around the cloud characters, upward-pointing arrow-like clouds symbolizing progress, and small stars highlighting the milestone. The design conveys patriotism and joy, emphasizing the significance of the occasion through bright colors and symbolic imagery."
+}

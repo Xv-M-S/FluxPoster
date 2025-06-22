@@ -1,15 +1,15 @@
 model_name: "flux-dev"
 data_config:
-  train_batch_size: 4
-  num_workers: 4
+  train_batch_size: 1
+  num_workers: 1
   img_size: [512, 512]
-  raw_img_dir: ./posterDataSets/input
-  mask_img_dir: ./posterDataSets/mask
-  label_dir: ./posterDataSets/label
+  raw_img_dir: ./posterData/input
+  mask_img_dir: ./posterData/mask
+  label_dir: ./posterData/label
 report_to: wandb
 train_batch_size: 3
-output_dir: saves_poster/
-max_train_steps: 2000
+output_dir: saves_poster_two/
+max_train_steps: 200000
 learning_rate: 2e-5
 lr_scheduler: constant
 lr_warmup_steps: 10
@@ -20,7 +20,7 @@ adam_epsilon: 1e-8
 max_grad_norm: 1.0
 logging_dir: logs
 mixed_precision: "bf16"
-checkpointing_steps: 250
+checkpointing_steps: 100000
 checkpoints_total_limit: 10
 tracker_project_name: canny_training
 resume_from_checkpoint: latest

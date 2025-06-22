@@ -1,0 +1,43 @@
+{
+    "image_name": "5_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.3916015625,
+                0.1802797833935018,
+                0.28125,
+                0.14485559566787004
+            ],
+            [
+                "\u9192",
+                0.9935937523841858
+            ]
+        ],
+        [
+            [
+                0.68310546875,
+                0.2996389891696751,
+                0.6123046875,
+                0.061371841155234655
+            ],
+            [
+                "SPRING",
+                0.9978111386299133
+            ]
+        ],
+        [
+            [
+                0.76318359375,
+                0.3526624548736462,
+                0.4462890625,
+                0.03203971119133574
+            ],
+            [
+                "DELICACY",
+                0.9993719458580017
+            ]
+        ]
+    ],
+    "description": "This image is a promotional advertisement for a spring-themed delicacy, specifically \"Spring Rolls with Chinese Chive and Meat Shreds\" (\u8360\u83dc\u8089\u4e1d\u6625\u5377). Here's a detailed description:\n\n### **Visual Elements:**\n\n1. **Main Dish - Spring Rolls:**\n   - The central focus of the image is on three golden-brown spring rolls placed on a white plate.\n   - The spring rolls are garnished with fresh green herbs (likely chives or similar greens) and sprinkled with sesame seeds (both black and white), adding texture and visual appeal.\n   - The spring rolls appear crispy and well-cooked, suggesting a delightful crunch.\n\n2. **Accompanying Garnishes:**\n   - To the left of the main dish, there is a small bowl containing fresh green herbs, possibly cilantro or parsley, which adds a vibrant touch of color and freshness to the composition.\n   - Green leaves are also scattered around the plate as additional garnish, enhancing the natural and springtime theme.\n\n3. **Background and Color Scheme:**\n   - The background is a soft, pastel green with subtle leaf patterns, evoking a fresh and natural spring atmosphere.\n   - The overall color palette is light and airy, with shades of green, beige, and white dominating the scene.\n\n4. **Text and Typography:**\n   - The top section features large, stylized Chinese characters that read \"\u6625\u65e5\u7269\u8bed\" (Spring Day Story) in a playful, handwritten font.\n   - Below this, smaller text states \"\u7f8e\u5473\u4e0a\u65b0 \u6625\u65e5\u9650\u5b9a\" (New Deliciousness, Spring Limited Edition), emphasizing the seasonal exclusivity of the dish.\n   - The English phrases \"SPRING DELICACY\" are prominently displayed in uppercase letters, reinforcing the theme.\n   - On the left side, vertical text describes the dish as \"\u8360\u83dc\u8089\u4e1d\u6625\u5377 \u6cb9\u9999\u4e0d\u817b\" (Spring Rolls with Chinese Chive and Meat Shreds, Oil-Aromatic but Not Greasy), highlighting its key ingredients and flavor profile.\n   - At the bottom, additional decorative text reiterates the spring theme with phrases like \"Spring Delicacy,\" \"\u6625\u65e5\u7f8e\u5473\" (Spring Deliciousness), \"\u9165\u8106\u6625\u5377\" (Crispy Spring Rolls), and \"\u9650\u5b9a\u7f8e\u98df\" (Limited Edition Food).\n\n5. **Branding and QR Code:**\n   - In the bottom-right corner, there is a QR code, likely linking to more information about the product or the brand\u2019s website.\n   - Next to the QR code, the word \"Spring\" is written in an elegant cursive font, further emphasizing the seasonal theme.\n\n### **Overall Impression:**\nThe image effectively combines appealing visuals, descriptive text, and a cohesive design to promote a delicious and seasonal spring roll dish. The use of fresh colors, appetizing food presentation, and clear messaging makes it an enticing advertisement for those looking to enjoy a special springtime treat.",
+    "finalDescription": "This promotional advertisement showcases \"Spring Rolls with Chinese Chive and Meat Shreds\" (\u8360\u83dc\u8089\u4e1d\u6625\u5377) as a seasonal delicacy. The central image features three golden-brown spring rolls on a white plate, garnished with fresh herbs and sesame seeds. Accompanying elements include a bowl of green herbs and scattered leaves, enhancing the spring theme. The background is a soft pastel green with leaf patterns, while the text highlights the dish's name, flavor profile (\"Oil-Aromatic but Not Greasy\"), and its limited availability during spring. Additional details like the QR code and branding reinforce the product's appeal. The design effectively combines visual aesthetics and clear messaging to promote this exclusive spring treat."
+}

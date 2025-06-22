@@ -13,7 +13,7 @@ from safetensors.torch import load_file as load_sft
 from optimum.quanto import requantize
 
 from .model import Flux, FluxParams
-from .controlnet import ControlNetFlux
+from .writenet import ControlNetFlux
 from .modules.autoencoder import AutoEncoder, AutoEncoderParams
 from .modules.conditioner import HFEmbedder
 from .annotator.dwpose import DWposeDetector
@@ -355,7 +355,7 @@ def load_flow_model_quintized(name: str, device: str | torch.device = "cuda", hf
 
 def load_controlnet(name, device, transformer=None):
     with torch.device(device):
-        controlnet = ControlNetFlux(configs[name].params)
+        controlnet = ControlNetFlux(configs[name].params, device=device )
     if transformer is not None:
         controlnet.load_state_dict(transformer.state_dict(), strict=False)
     return controlnet

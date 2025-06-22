@@ -1,0 +1,55 @@
+{
+    "image_name": "23_poster.jpg",
+    "ocr_result": [
+        [
+            [
+                0.4892578125,
+                0.15207581227436823,
+                0.65625,
+                0.06859205776173286
+            ],
+            [
+                "C\u4ee5\u82b1\u4e4b\u540d",
+                0.9575597643852234
+            ]
+        ],
+        [
+            [
+                0.48193359375,
+                0.23014440433212996,
+                0.5888671875,
+                0.07310469314079422
+            ],
+            [
+                "\u4e88\u7231\u6210\u8bd7",
+                0.9651424884796143
+            ]
+        ],
+        [
+            [
+                0.236328125,
+                0.6854693140794224,
+                0.28125,
+                0.01444043321299639
+            ],
+            [
+                "\u5373\u65e5\u8d77\u81f35\u67088\u65e5",
+                0.9842630624771118
+            ]
+        ],
+        [
+            [
+                0.3984375,
+                0.9187725631768953,
+                0.400390625,
+                0.02075812274368231
+            ],
+            [
+                ".021:0000.0000",
+                0.9227935671806335
+            ]
+        ]
+    ],
+    "description": "This image is a promotional poster with a warm, inviting design, primarily using soft yellow and pastel tones. Here's a detailed description:\n\n### **Title and Theme**\n- The main title at the top reads: **\"\u4ee5\u82b1\u4e4b\u540d \u4e88\u7231\u6210\u8bd7\"** (In the name of flowers, turn love into poetry).\n- This suggests a theme centered around expressing love through flowers, likely for a special occasion such as Mother's Day.\n\n### **Visual Elements**\n- **Floral Illustration**: A beautifully illustrated bouquet of flowers is prominently displayed in the center. The bouquet includes:\n  - Various colorful flowers (yellow, orange, pink, and blue).\n  - Green leaves and stems.\n  - A decorative flamingo holding a card that says \"Happy Mother's Day.\"\n- The overall style is hand-drawn and whimsical, giving it a gentle and affectionate feel.\n\n### **Promotional Details**\nThe text below the illustration outlines specific promotions available from the current date to May 8th (Mother's Day). Key points include:\n1. **Pre-order Discounts**:\n   - Pre-ordering gets you an immediate discount of 20 yuan.\n   - The first 100 customers receive a custom-made preserved flower keychain as a gift.\n2. **Purchase Benefits**:\n   - Spending over 299 yuan earns you a handwritten golden greeting card plus a custom photo frame (for mother-daughter or mother-son photos).\n3. **Special Package Offer**:\n   - A combo package of fresh flowers and desserts saves 58 yuan (limited to 50 sets).\n\n### **Contact Information**\n- **Phone Number**: Provided as **021-0000-0000** for inquiries.\n- **Website**: Linked to **HTTPS://WWW.58PIC.COM/**.\n- **Address**: Located at **No. 8, 666 Bibo Road, Pudong New Area, Shanghai**.\n- **QR Code**: Present on the bottom right for quick access to more information or online services.\n\n### **Overall Design**\n- The background is a textured, light yellow color, enhancing the warmth and elegance of the design.\n- The layout is clean and organized, with clear sections for the title, visuals, promotional details, and contact information.\n\n### **Purpose**\nThis poster aims to promote flower-related products or services for Mother's Day, encouraging early purchases with attractive discounts and gifts. It targets customers looking to express their love and appreciation through floral arrangements.",
+    "finalDescription": "This promotional poster features a warm, inviting design with soft yellow and pastel tones, centered around the theme of expressing love through flowers for Mother's Day. The title, **\"\u4ee5\u82b1\u4e4b\u540d \u4e88\u7231\u6210\u8bd7\"** (In the name of flowers, turn love into poetry), emphasizes the emotional connection between flowers and affection. A whimsical floral bouquet illustration includes colorful flowers, green leaves, and a decorative flamingo holding a \"Happy Mother's Day\" card.\n\nThe poster highlights promotions valid until May 8th, such as:\n- A 20-yuan discount for pre-orders.\n- A free custom-made preserved flower keychain for the first 100 customers.\n- A handwritten golden greeting card and custom photo frame for purchases over 299 yuan.\n- A special combo package of fresh flowers and desserts saving 58 yuan (limited to 50 sets).\n\nContact details include a phone number, website link, physical address in Shanghai, and a QR code for more information. The textured light yellow background and clean layout enhance the poster's warmth and elegance. Its purpose is to encourage early purchases of flower-related products or services for Mother's Day, appealing to those wanting to express love and appreciation."
+}
