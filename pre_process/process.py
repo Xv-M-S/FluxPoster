@@ -4,8 +4,15 @@ import numpy as np
 import math
 import re
 import torch
+import torchvision.transforms as transforms
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+transforms_operation = transforms.Compose([
+    transforms.ToTensor(),
+    # transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]) # ImageNet的分布
+    transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+])
 
 def cropImage(image, bboxes):
     _, height, width = image.shape
@@ -91,9 +98,7 @@ def generate_position_mask(bboxes, width, height):
         mask = np.zeros((height, width), dtype=np.uint8)
         mask[y1:y2, x1:x2] = 255
 
-        # 将 numpy 数组转换为 PyTorch 张量
-        mask_tensor = torch.from_numpy(mask/127.5 - 1).unsqueeze(0)  # 添加通道维度
-        mask_tensor = mask_tensor.float()
+        mask_tensor = transforms_operation(mask)
         position_mask.append(mask_tensor)
 
     # 将列表中的所有张量堆叠成一个张量
@@ -109,39 +114,28 @@ def convert_tensors_to_bfloat16(data):
         return data.to(dtype=torch.bfloat16)
     else:
         return data  # 保留非张量数据不变
-def preProcess(img, hint, mask_img, mask_hint, raw_caption, caption, ocr_result):
-    bboxes = []
-    texts = []
-    for line in ocr_result:
-        bboxes.append(line[0])
-        print(line)
-        texts.append(line[1][0])
-
-    if len(bboxes) == 0:
-        return None
+def preProcess(mask_img, mask_hint, bboxes):
+    raw_img_boxes = cropImage(mask_img, bboxes)
+    text_img_boxes = []
+    for raw_img_box in raw_img_boxes:
+        text_img_box = transforms_operation(raw_img_box)
+        text_img_boxes.append(text_img_box)
     
-    # 裁剪图片和hint
-    raw_img_boxes = cropImage(img, bboxes)
-    raw_hint_boxes = cropImage(hint, bboxes)
+    raw_hint_bboxes = cropImage(mask_hint, bboxes)
+    text_hint_boxes = []
+    for raw_hint_bbox in raw_hint_bboxes:
+        text_hint_box = transforms_operation(raw_hint_bbox)
+        text_hint_boxes.append(text_hint_box)
 
-    mask_img_boxes = cropImage(mask_img, bboxes)
-    mask_hint_boxes = cropImage(mask_hint, bboxes)
-
-    colors = color_picker(raw_img_boxes, mask_img_boxes)
-
-    _, height, width = img.shape
+    _, height, width = mask_img.shape
     position_mask = generate_position_mask(bboxes, width, height)
 
-    visual_text_info = {
-        "raw_img_boxes": raw_img_boxes,
-        "raw_hint_boxes": raw_hint_boxes,
-        "mask_img_boxes": mask_img_boxes,
-        "mask_hint_boxes": mask_hint_boxes,
-        "colors": colors,
-        "position_mask": position_mask,
-    }
 
-    visual_text_info = convert_tensors_to_bfloat16(visual_text_info)
+    visual_text_info = {
+        "position_mask" : position_mask,
+        "text_img_boxes": text_img_boxes,
+        "text_hint_boxes": text_hint_boxes
+    }
 
     return visual_text_info
 
@@ -187,23 +181,35 @@ def raw_image_position_mask(bboxes, image, mask = False):
 
 
 
-def auxiliaryPreProcess(img, hint, mask_img, mask_hint, raw_caption, caption, ocr_result):
-    bboxes = []
-    texts = []
-    for line in ocr_result:
-        bboxes.append(line[0])
-        texts.append(line[1][0])
-
-    if len(bboxes) == 0:
-        return None
-
-    glyphs_img = mask_img
+"""
+输入：
+    @img: 原始图片
+    @mask_img: 生成的文本图片
+    @bboxes: 检测到的文本框
+输出：
+    @text_info: auxiliary模块的输出
+"""
+def auxiliaryPreProcess(img, mask_img, bboxes):
+    transforms_operation = transforms.Compose([
+        transforms.ToTensor(),
+        # transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]) # ImageNet的分布
+        transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+    ])
+    ret_bboxes = []
 
     _, height, width = img.shape
+    for box in bboxes:
+        x_center, y_center, w, h = box
+        ret_bboxes.append([x_center * width, y_center * height, w * width, h * height])
+
     position_mask = raw_image_position_mask(bboxes, img, True)
-    position_mask = torch.from_numpy((position_mask / 127.5) - 1)
-    position_mask = position_mask.unsqueeze(0)
+    position_mask = transforms_operation(position_mask)
     text_mask_img = raw_image_position_mask(bboxes, img)
+    text_mask_img = transforms_operation(text_mask_img)
+
+    position_mask = transforms
+
+    glyphs_img = mask_img
 
     text_info = {
         "glyphs": glyphs_img,

@@ -246,6 +246,40 @@ class FontEmbedding(nn.Module):
         features = glyph_features + position_features + font_features + colors_features
     
         return features
+    
+    def encoder_visual_text_v2(self, visual_text_info):
+        """
+            visual_text_info = {
+                "position_mask" : position_mask,
+                "text_img_boxes": text_img_boxes,
+                "text_hint_boxes": text_hint_boxes
+            }
+        """
+        text_img_boxes = visual_text_info['text_img_boxes']
+        text_hint_boxes = visual_text_info['text_hint_boxes']
+        position_mask = visual_text_info['position_mask']
+        device = visual_text_info['device']
+
+        # glyph encoder
+        for i, mask_img in enumerate(text_img_boxes):
+            text_img_boxes[i] = resize_img(mask_img, 48, 320) # 提取特征限制图片大小为（3，48，320）
+        paddle_glyph_features = self.paddle_glyph_encoder(text_img_boxes)
+        glyph_features = self.proj(paddle_glyph_features.reshape(paddle_glyph_features.shape[0], -1))
+
+        # position encoder
+        position_features = self.position_encoder(position_mask)
+
+        # font encoder
+        # 直接用图片的边缘图会好很多
+        for i,hint in enumerate(text_hint_boxes):
+            text_hint_boxes[i] = resize_img(hint, 48, 320)
+        paddle_font_features = self.paddle_font_encoder(text_hint_boxes)
+        font_features = self.style_proj(paddle_font_features.reshape(paddle_font_features.shape[0], -1))
+
+        # 特征加和
+        features = glyph_features + position_features + font_features
+    
+        return features
 
     def replace_placeholder(self, tokenized_text, embedded_text, font_features):
         placeholder_string = "*"

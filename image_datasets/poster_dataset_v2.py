@@ -4,6 +4,7 @@ import numpy as np
 from PIL import Image
 import torch
 from torch.utils.data import Dataset, DataLoader
+import torchvision.transforms as transforms
 import json
 import random
 import cv2
@@ -49,6 +50,12 @@ class CustomImageDataset(Dataset):
                 self.labels.append(label_dir)
                 self.masks.append(mask_img_dir)
                 self.captions.append(caption_dir)
+        
+        self.transforms = transforms.Compose([
+            transforms.ToTensor(),
+            # transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]) # ImageNet的分布
+            transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+        ])
 
     def __len__(self):
         return len(self.images)
@@ -57,17 +64,20 @@ class CustomImageDataset(Dataset):
         # raw_image 处理
         img = Image.open(self.images[idx])
         # img -> tensor
-        img = torch.from_numpy((np.array(img) / 127.5) - 1)
-        img = img.permute(2, 0, 1)
+        # img = torch.from_numpy((np.array(img) / 127.5) - 1)
+        # img = img.permute(2, 0, 1)
+        img = self.transforms(img)
 
         # mask_image 处理
         mask_img = Image.open(self.masks[idx])
         mask_hint = canny_processor(mask_img) # 获取边缘图
         # img -> tensor
-        mask_img = torch.from_numpy((np.array(mask_img) / 127.5) - 1)
-        mask_hint = torch.from_numpy((np.array(mask_hint) / 127.5) - 1)
-        mask_img = mask_img.permute(2, 0, 1)
-        mask_hint = mask_hint.permute(2, 0, 1)
+        # mask_img = torch.from_numpy((np.array(mask_img) / 127.5) - 1)
+        # mask_hint = torch.from_numpy((np.array(mask_hint) / 127.5) - 1)
+        # mask_img = mask_img.permute(2, 0, 1)
+        # mask_hint = mask_hint.permute(2, 0, 1)
+        mask_img = self.transforms(mask_img)
+        mask_hint = self.transforms(mask_hint)
 
         # 获取captions
         jsf = json.load(open(self.captions[idx]))
