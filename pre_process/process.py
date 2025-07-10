@@ -197,6 +197,7 @@ def auxiliaryPreProcess(img, hint, mask_img, mask_hint, raw_caption, caption, oc
     if len(bboxes) == 0:
         return None
 
+    # glyphs_img = mask_img.permute(2, 0, 1) # Convert to [C, H, W] format
     glyphs_img = mask_img
 
     _, height, width = img.shape

@@ -113,7 +113,8 @@ class FontEmbedding(nn.Module):
     def __init__(
         self,
         # CLIPeEncoder配置
-        version="./models/clip-vit-large-patch14",
+        # version="./models/clip-vit-large-patch14",
+        version= "openai/clip-vit-large-patch14",
         use_vision=False,
         img_concat_text=False,
         token_dim = 768,

@@ -17,7 +17,7 @@ ldm 链接: https://github.com/CompVis/latent-diffusion/tree/main/ldm
 
 def get_autoencoder():
     # Load the YAML configuration file
-    with open('/home/sxm/Poster/TextGeneration/Method/AnyText2/models_yaml/anytext2_sd15.yaml', 'r') as file:
+    with open('./train_configs/anytext2_sd15.yaml', 'r') as file:
         config = yaml.safe_load(file)
 
     # Extract the first_stage_config

@@ -13,7 +13,8 @@ from safetensors.torch import load_file as load_sft
 from optimum.quanto import requantize
 
 from .model import Flux, FluxParams
-from .controlnet import ControlNetFlux
+# from .controlnet import ControlNetFlux
+from .writenet import ControlNetFlux
 from .modules.autoencoder import AutoEncoder, AutoEncoderParams
 from .modules.conditioner import HFEmbedder
 from .annotator.dwpose import DWposeDetector
@@ -177,8 +178,10 @@ configs = {
             hidden_size=3072,
             mlp_ratio=4.0,
             num_heads=24,
-            depth=19,
-            depth_single_blocks=38,
+            depth=1,
+            depth_single_blocks=1,
+            # depth=19,
+            # depth_single_blocks=38,
             axes_dim=[16, 56, 56],
             theta=10_000,
             qkv_bias=True,

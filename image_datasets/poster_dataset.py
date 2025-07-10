@@ -97,8 +97,7 @@ class CustomImageDataset(Dataset):
 
         mask_img = torch.from_numpy((np.array(mask_img) / 127.5) - 1)
         mask_hint = torch.from_numpy((np.array(mask_hint) / 127.5) - 1)
-        # mask_img = mask_img.permute(2, 0, 1)
-        mask_img = mask_img.unsqueeze(0)
+        mask_img = mask_img.permute(2, 0, 1)
         mask_hint = mask_hint.permute(2, 0, 1)
 
         # 获取标注
