@@ -24,4 +24,4 @@ checkpointing_steps: 250
 checkpoints_total_limit: 10
 tracker_project_name: canny_training
 resume_from_checkpoint: latest
-gradient_accumulation_steps: 2
+gradient_accumulation_steps: 1

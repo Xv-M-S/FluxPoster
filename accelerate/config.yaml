@@ -3,13 +3,13 @@ debug: True
 deepspeed_config:
   gradient_accumulation_steps: 2
   gradient_clipping: 1.0
-  offload_optimizer_device: none
-  offload_param_device: none
+  offload_optimizer_device: cpu
+  offload_param_device: cpu
   zero3_init_flag: false
   zero_stage: 2
 distributed_type: DEEPSPEED
 downcast_bf16: 'no'
-enable_cpu_affinity: false
+enable_cpu_affinity: true
 machine_rank: 0
 main_training_function: main
 mixed_precision: bf16
@@ -20,4 +20,4 @@ same_network: true
 tpu_env: []
 tpu_use_cluster: false
 tpu_use_sudo: false
-use_cpu: false
+use_cpu: true

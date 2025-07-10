@@ -119,7 +119,7 @@ def main():
             os.makedirs(args.output_dir, exist_ok=True)
 
     print("DEVICE", accelerator.device)
-    dit, vae, t5, clip = get_models(name=args.model_name, device=accelerator.device, offload=False, is_schnell=is_schnell)
+    dit, vae, t5, clip = get_models(name=args.model_name, device=accelerator.device, offload=True, is_schnell=is_schnell)
 
     vae.requires_grad_(False)
     t5.requires_grad_(False)
@@ -225,7 +225,6 @@ def main():
 
             initial_global_step = global_step
             first_epoch = global_step // num_update_steps_per_epoch
-
     else:
         initial_global_step = 0
     progress_bar = tqdm(
@@ -286,7 +285,8 @@ def main():
 
 
                 with torch.no_grad():
-                    x_1 = vae.encode(bs_img.to(accelerator.device).to(torch.float32))
+                    x_1 = vae.encode(bs_img.to(torch.float32))
+                    x_1 = x_1.to(accelerator.device)
                     inp = prepare(t5=t5, clip=clip, img=x_1, prompt=image_prompts)
                     
                     text_pooler, text_hidden, tokenized_text = clip(text_prompts, detail=True)
