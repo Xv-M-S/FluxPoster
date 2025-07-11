@@ -52,6 +52,9 @@ from text_module.TrainableModel import TrainableModel
 from pre_process.process import preProcess, auxiliaryPreProcess, getFontPrompt
 import torchvision.transforms as transforms
 
+##############定义Global变量
+GLOBAL_MACHINE = "4090"
+
 def convert_tensors_to_bfloat16(data, device):
     if isinstance(data, dict):
         return {key: convert_tensors_to_bfloat16(value, device) for key, value in data.items()}
@@ -120,6 +123,10 @@ def main():
 
     print("DEVICE", accelerator.device)
     dit, vae, t5, clip = get_models(name=args.model_name, device=accelerator.device, offload=True, is_schnell=is_schnell)
+    # 4090 上跑，节省GPU内存空间
+    if GLOBAL_MACHINE == "4090":
+        t5.to("cpu")
+        clip.to("cpu")
 
     vae.requires_grad_(False)
     t5.requires_grad_(False)
@@ -288,8 +295,16 @@ def main():
                     x_1 = vae.encode(bs_img.to(torch.float32))
                     x_1 = x_1.to(accelerator.device)
                     inp = prepare(t5=t5, clip=clip, img=x_1, prompt=image_prompts)
+                    if GLOBAL_MACHINE == "4090":
+                        # 将clip和t5的计算结果移动到gpu
+                        inp["txt"].to(accelerator.device)
+                        inp["txt_ids"].to(accelerator.device)
+
                     
                     text_pooler, text_hidden, tokenized_text = clip(text_prompts, detail=True)
+                    if GLOBAL_MACHINE == "4090":
+                        text_hidden = text_hidden.to(accelerator.device)
+                        tokenized_text = tokenized_text.to(accelerator.device)
                     replace_text_hidden = font_embedding.replace_placeholder(tokenized_text, text_hidden, font_features)
                     y_text = attention_pooling(replace_text_hidden)
                    
