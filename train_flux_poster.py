@@ -249,7 +249,7 @@ def main():
     for epoch in range(first_epoch, args.num_train_epochs):
         train_loss = 0.0
         for step, batch in enumerate(train_dataloader):
-            with accelerator.accumulate(controlnet):
+            with accelerator.accumulate(trainable_model):
                 bs_img, bs_hint, bs_mask_img, bs_mask_hint, bs_raw_caption, bs_caption, bs_ocr_result = batch
                 control_image = bs_hint.to(accelerator.device) # 在writeNet中没有使用，而是构建了一个全零的大小相等的变量
                 image_prompts = bs_caption

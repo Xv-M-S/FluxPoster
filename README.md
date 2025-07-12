@@ -15,8 +15,7 @@ CUDA_VISIBLE_DEVICES=1 accelerate launch --config_file "./accelerate/config.yaml
 ``` bash
 export WANDB_MODE=offline
 export CUDA_VISIBLE_DEVICES=1
-nohup accelerate launch --config_file "./accelerate/config
-.yaml" train_flux_poster.py --config "./train_configs/test_poster_controlnet.yaml" > train.log 2>&1 &
+nohup accelerate launch --config_file "./accelerate/config.yaml" train_flux_poster.py --config "./train_configs/test_poster_controlnet.yaml" > train.log 2>&1 &
 ```
 
 # inference
