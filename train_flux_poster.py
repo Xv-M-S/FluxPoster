@@ -26,10 +26,15 @@ from transformers.utils import ContextManagers
 from omegaconf import OmegaConf
 from copy import deepcopy
 import diffusers
-from diffusers import AutoencoderKL, DDPMScheduler
+# from diffusers import AutoencoderKL, DDPMScheduler
+from diffusers.models.autoencoders.autoencoder_kl import AutoencoderKL
+from diffusers.schedulers.scheduling_ddpm import DDPMScheduler
 from diffusers.optimization import get_scheduler
 from diffusers.training_utils import EMAModel, compute_dream_and_update_latents, compute_snr
-from diffusers.utils import check_min_version, deprecate, is_wandb_available, make_image_grid
+# from diffusers.utils import check_min_version, deprecate, is_wandb_available, make_image_grid
+from diffusers.utils.deprecation_utils import deprecate
+from diffusers.utils.import_utils import is_wandb_available
+from diffusers.utils.pil_utils import make_image_grid
 from diffusers.utils.hub_utils import load_or_create_model_card, populate_model_card
 from diffusers.utils.import_utils import is_xformers_available
 from diffusers.utils.torch_utils import is_compiled_module
