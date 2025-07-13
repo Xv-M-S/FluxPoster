@@ -35,3 +35,7 @@ python3 main_poster.py \
 export CUDA_VISIBLE_DEVICES=2
 accelerate launch --main_process_port 29586 --config_file "./accelerate/config.yaml" train_flux_text.py --config "train_configs/test_lora.yaml" 
 ```
+
+# InternViT 1.5
+多模态视觉模型InternViT 1.5在文本识别相关任务上表现出出色的性能。
+故采用InternViT 1.5提取视觉文本特征作为唯一的标识。
