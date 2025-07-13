@@ -36,9 +36,9 @@ from diffusers.utils.hub_utils import load_or_create_model_card, populate_model_
 from diffusers.utils.import_utils import is_xformers_available
 from diffusers.utils.torch_utils import is_compiled_module
 from einops import rearrange
-from src.flux.sampling import denoise, get_noise, get_schedule, prepare, unpack
+from src.flux.sampling import denoise, get_noise, get_schedule, prepare, unpack, prepareForText
 from src.flux.util import (configs, load_ae, load_clip,
-                       load_flow_model2, load_t5)
+                       load_flow_model2, load_t5, InternViTWrapper)
 from src.flux.modules.layers import DoubleStreamBlockLoraProcessor, SingleStreamBlockLoraProcessor
 from src.flux.xflux_pipeline import XFluxSampler
 
@@ -51,12 +51,12 @@ logger = get_logger(__name__, log_level="INFO")
 GLOBAL_MACHINE = "4090"
 
 def get_models(name: str, device, offload: bool, is_schnell: bool):
-    t5 = load_t5(device, max_length=256 if is_schnell else 512)
-    clip = load_clip(device)
-    clip.requires_grad_(False)
+    # t5 = load_t5(device, max_length=256 if is_schnell else 512)
+    # clip = load_clip(device)
+    # clip.requires_grad_(False)
     model = load_flow_model2(name, device="cpu")
     vae = load_ae(name, device="cpu" if offload else device)
-    return model, vae, t5, clip
+    return model, vae #, t5, clip
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Simple example of a training script.")
@@ -108,10 +108,8 @@ def main():
         if args.output_dir is not None:
             os.makedirs(args.output_dir, exist_ok=True)
 
-    dit, vae, t5, clip = get_models(name=args.model_name, device=accelerator.device, offload=False, is_schnell=is_schnell)
-    if GLOBAL_MACHINE == "4090":
-        t5.to("cpu")
-        clip.to("cpu")
+    dit, vae  = get_models(name=args.model_name, device=accelerator.device, offload=False, is_schnell=is_schnell)
+    internvit = InternViTWrapper()
         
     lora_attn_procs = {}
 
@@ -146,8 +144,7 @@ def main():
     dit.set_attn_processor(lora_attn_procs)
 
     vae.requires_grad_(False)
-    t5.requires_grad_(False)
-    clip.requires_grad_(False)
+    # internvit.requires_grad_(False)
     dit = dit.to(torch.float32)
     dit.train()
     optimizer_cls = torch.optim.AdamW
@@ -256,8 +253,14 @@ def main():
                 img, prompts = batch
                 with torch.no_grad():
                     x_1 = vae.encode(img.to(accelerator.device).to(torch.float32))
-                    inp = prepare(t5=t5, clip=clip, img=x_1, prompt=prompts)
+                    inp = prepareForText(img=x_1, prompt=prompts)
                     x_1 = rearrange(x_1, "b c (h ph) (w pw) -> b (h w) (c ph pw)", ph=2, pw=2)
+
+                    # last hidden state [1,1025,3200] , 等价于t5的输出
+                    # pooler_output [1, 3200] , 等价于clip的输出
+                    last_hidden_state, pooler_output = internvit(img)
+                    inp['txt_ids'] = torch.zeros(bs, pooler_output.shape[1], 3)
+                    
 
                 bs = img.shape[0]
                 t = torch.tensor([timesteps[random.randint(0, 999)]]).to(accelerator.device)
@@ -269,11 +272,12 @@ def main():
                 # Predict the noise residual and compute loss
                 model_pred = dit(img=x_t.to(weight_dtype),
                                 img_ids=inp['img_ids'].to(weight_dtype),
-                                txt=inp['txt'].to(weight_dtype),
+                                txt=last_hidden_state.to(weight_dtype),
                                 txt_ids=inp['txt_ids'].to(weight_dtype),
-                                y=inp['vec'].to(weight_dtype),
+                                y=pooler_output.to(weight_dtype),
                                 timesteps=t.to(weight_dtype),
-                                guidance=guidance_vec.to(weight_dtype),)
+                                guidance=guidance_vec.to(weight_dtype),
+                                flags="pure_text",) # 这里标记为 pure_text
 
                 loss = F.mse_loss(model_pred.float(), (x_0 - x_1).float(), reduction="mean")
 

@@ -77,6 +77,10 @@ class Flux(nn.Module):
         self.final_layer = LastLayer(self.hidden_size, 1, self.out_channels)
         self.gradient_checkpointing = False
 
+        # 针对 train_pure_text 添加的网络
+        self.pure_text_in = nn.Linear(3200, self.hidden_size) 
+        self.pure_pooler_in = nn.Linear(3200, self.hidden_size)
+
     def _set_gradient_checkpointing(self, module, value=False):
         if hasattr(module, "gradient_checkpointing"):
             module.gradient_checkpointing = value
@@ -146,6 +150,7 @@ class Flux(nn.Module):
         guidance: Tensor | None = None,
         image_proj: Tensor | None = None, 
         ip_scale: Tensor | float = 1.0, 
+        flags: str = "flux", # 用于标记更改，扩展功能
     ) -> Tensor:
         if img.ndim != 3 or txt.ndim != 3:
             raise ValueError("Input img and txt tensors must have 3 dimensions.")
@@ -157,8 +162,12 @@ class Flux(nn.Module):
             if guidance is None:
                 raise ValueError("Didn't get guidance strength for guidance distilled model.")
             vec = vec + self.guidance_in(timestep_embedding(guidance, 256))
-        vec = vec + self.vector_in(y)
-        txt = self.txt_in(txt)
+        if flags == "flux":
+            vec = vec + self.vector_in(y)
+            txt = self.txt_in(txt)
+        elif flags == "pure_text":
+            vec = vec + self.pure_text_in(txt)
+            txt = self.pure_pooler_in(txt)
 
         ids = torch.cat((txt_ids, img_ids), dim=1)
         pe = self.pe_embedder(ids)

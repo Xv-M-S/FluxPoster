@@ -1,6 +1,8 @@
 import os
 from dataclasses import dataclass
 
+from attr import has
+from regex import F
 import torch
 import json
 import cv2
@@ -11,6 +13,7 @@ from safetensors import safe_open
 from safetensors.torch import load_file as load_sft
 
 from optimum.quanto import requantize
+from transformers import AutoModel, CLIPImageProcessor
 
 from .model import Flux, FluxParams
 # from .controlnet import ControlNetFlux
@@ -178,8 +181,8 @@ configs = {
             hidden_size=3072,
             mlp_ratio=4.0,
             num_heads=24,
-            depth=6,
-            depth_single_blocks=18,
+            depth=5,
+            depth_single_blocks=15,
             # depth=19,
             # depth_single_blocks=38,
             axes_dim=[16, 56, 56],
@@ -319,8 +322,8 @@ def load_flow_model2(name: str, device: str | torch.device = "cuda", hf_download
     ):
         ckpt_path = hf_hub_download(configs[name].repo_id, configs[name].repo_flow.replace("sft", "safetensors"))
 
-    with torch.device("meta" if ckpt_path is not None else device):
-        model = Flux(configs[name].params)
+    # with torch.device("meta" if ckpt_path is not None else device):
+    model = Flux(configs[name].params).to(device)
 
     if ckpt_path is not None:
         print("Loading checkpoint")
@@ -328,6 +331,25 @@ def load_flow_model2(name: str, device: str | torch.device = "cuda", hf_download
         sd = load_sft(ckpt_path, device=str(device))
         missing, unexpected = model.load_state_dict(sd, strict=False, assign=True)
         print_load_warning(missing, unexpected)
+    
+    hasMetaTensor = False
+    for name, param in model.named_parameters():
+        if param.device.type == 'meta':
+            hasMetaTensor = True
+            print(f"[Meta Tensor Found] {name}")
+
+    if hasMetaTensor:
+        model_state_dict = model.state_dict()
+        for name, param in model.named_parameters():
+            if param.device.type == "meta":
+                print(f"Initializing meta tensor: {name}")
+                if "weight" in name:
+                    model_state_dict[name] = torch.nn.init.xavier_uniform_(torch.empty_like(param))
+                elif "bias" in name:
+                    model_state_dict[name] = torch.nn.init.zeros_(torch.empty_like(param))
+
+        model.load_state_dict(model_state_dict)
+
     return model
 
 def load_flow_model_quintized(name: str, device: str | torch.device = "cuda", hf_download: bool = True):
@@ -391,6 +413,23 @@ def load_ae(name: str, device: str | torch.device = "cuda", hf_download: bool = 
         missing, unexpected = ae.load_state_dict(sd, strict=False, assign=True)
         print_load_warning(missing, unexpected)
     return ae
+
+class InternViTWrapper:
+    def __init__(self, model_name : str = 'OpenGVLab/InternViT-6B-448px-V1-5', device: str | torch.device = "cpu"):
+        self.model = AutoModel.from_pretrained(
+            model_name,
+            torch_dtype=torch.bfloat16,
+            low_cpu_mem_usage=True,
+            trust_remote_code=True
+        ).to(device).eval()
+        self.image_processor = CLIPImageProcessor.from_pretrained(model_name)
+
+    def __call__(self, image):
+        pixel_values = self.image_processor(images=image, return_tensors='pt').pixel_values
+        pixel_values = pixel_values.to(torch.bfloat16).to(self.model.device)
+        outputs = self.model(pixel_values)
+        return outputs.last_hidden_state, outputs.pooler_output
+
 
 
 class WatermarkEmbedder:

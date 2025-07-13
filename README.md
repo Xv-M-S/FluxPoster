@@ -21,7 +21,7 @@ nohup accelerate launch --config_file "./accelerate/config.yaml" train_flux_post
 # inference controlnet
 
 ``` bash
-export CUDA_VISIBLE_DEVICES=1
+export CUDA_VISIBLE_DEVICES=2
 python3 main_poster.py \
  --use_controlnet --model_type flux-dev \
  --width 512 --height 512  --timestep_to_start_cfg 1 \
@@ -32,8 +32,13 @@ python3 main_poster.py \
 # train on 4090 base lora
 
 ``` bash
-export CUDA_VISIBLE_DEVICES=2
+export CUDA_VISIBLE_DEVICES=1
 accelerate launch --main_process_port 29586 --config_file "./accelerate/config.yaml" train_flux_text.py --config "train_configs/test_lora.yaml" 
+```
+
+``` bash
+export CUDA_VISIBLE_DEVICES=1
+accelerate launch --main_process_port 29586 --config_file "./accelerate/config.yaml" train_flux_lora_deepspeed.py --config "train_configs/test_lora.yaml" 
 ```
 
 # InternViT 1.5
