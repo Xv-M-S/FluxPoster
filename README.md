@@ -33,12 +33,26 @@ python3 main_poster.py \
 
 ``` bash
 export CUDA_VISIBLE_DEVICES=1
-accelerate launch --main_process_port 29586 --config_file "./accelerate/config.yaml" train_flux_text.py --config "train_configs/test_lora.yaml" 
+accelerate launch --main_process_port 29586 --config_file "./accelerate/config.yaml" train_flux_text.py --config "train_configs/pure_text_lora.yaml" 
 ```
 
 ``` bash
 export CUDA_VISIBLE_DEVICES=1
 accelerate launch --main_process_port 29586 --config_file "./accelerate/config.yaml" train_flux_lora_deepspeed.py --config "train_configs/test_lora.yaml" 
+```
+
+为了加快训练，将internVit移动到cuda:1,需要申请两块gpu
+
+``` bash
+export CUDA_VISIBLE_DEVICES=2, 3
+accelerate launch --main_process_port 29586 --config_file "./accelerate/config.yaml" train_flux_text.py --config "train_configs/pure_text_lora.yaml" 
+```
+
+离线运行
+``` bash
+export WANDB_MODE=offline
+export CUDA_VISIBLE_DEVICES=2,3
+nohup accelerate launch --main_process_port 29586 --config_file "./accelerate/config.yaml" train_flux_text.py --config "train_configs/pure_text_lora.yaml" > train_output.log 2>&1 &
 ```
 
 # InternViT 1.5

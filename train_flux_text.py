@@ -7,6 +7,7 @@ import random
 import shutil
 from contextlib import nullcontext
 from pathlib import Path
+from cv2 import normalize
 from safetensors.torch import save_file
 
 import accelerate
@@ -42,13 +43,16 @@ from src.flux.util import (configs, load_ae, load_clip,
 from src.flux.modules.layers import DoubleStreamBlockLoraProcessor, SingleStreamBlockLoraProcessor
 from src.flux.xflux_pipeline import XFluxSampler
 
-from image_datasets.dataset import loader
+from image_datasets.pure_text_dataset import loader
 from train_flux_poster import GLOBAL_MACHINE
 if is_wandb_available():
     import wandb
 logger = get_logger(__name__, log_level="INFO")
 
 GLOBAL_MACHINE = "4090"
+os.environ["CUDA_VISIBLE_DEVICES"] = "2,3"
+os.environ["WANDB_MODE"] = "offline"
+GLOBAL_VERTIFY = False
 
 def get_models(name: str, device, offload: bool, is_schnell: bool):
     # t5 = load_t5(device, max_length=256 if is_schnell else 512)
@@ -109,7 +113,7 @@ def main():
             os.makedirs(args.output_dir, exist_ok=True)
 
     dit, vae  = get_models(name=args.model_name, device=accelerator.device, offload=False, is_schnell=is_schnell)
-    internvit = InternViTWrapper()
+    internvit = InternViTWrapper(device = "cuda:1")  # 将internvit模型加载到GPU1
         
     lora_attn_procs = {}
 
@@ -250,19 +254,22 @@ def main():
         train_loss = 0.0
         for step, batch in enumerate(train_dataloader):
             with accelerator.accumulate(dit):
-                img, prompts = batch
+                raw_img, normalize_img = batch
+                bs = normalize_img.shape[0]
                 with torch.no_grad():
-                    x_1 = vae.encode(img.to(accelerator.device).to(torch.float32))
-                    inp = prepareForText(img=x_1, prompt=prompts)
+                    x_1 = vae.encode(normalize_img.to(accelerator.device).to(torch.float32))
+                    inp = prepareForText(img=x_1)
                     x_1 = rearrange(x_1, "b c (h ph) (w pw) -> b (h w) (c ph pw)", ph=2, pw=2)
 
                     # last hidden state [1,1025,3200] , 等价于t5的输出
                     # pooler_output [1, 3200] , 等价于clip的输出
-                    last_hidden_state, pooler_output = internvit(img)
-                    inp['txt_ids'] = torch.zeros(bs, pooler_output.shape[1], 3)
+                    last_hidden_state, pooler_output = internvit(raw_img)
+                    # 结果移动到cuda:0
+                    last_hidden_state, pooler_output = last_hidden_state.to("cuda:0"), pooler_output.to("cuda:0")
+                    inp['txt_ids'] = torch.zeros(bs, last_hidden_state.shape[1], 3).to("cuda:0")
+
                     
 
-                bs = img.shape[0]
                 t = torch.tensor([timesteps[random.randint(0, 999)]]).to(accelerator.device)
                 x_0 = torch.randn_like(x_1).to(accelerator.device)
                 x_t = (1 - t) * x_1 + t * x_0
@@ -301,7 +308,7 @@ def main():
                 train_loss = 0.0
 
                 if not args.disable_sampling and global_step % args.sample_every == 0:
-                    if accelerator.is_main_process:
+                    if accelerator.is_main_process and GLOBAL_VERTIFY:
                         print(f"Sampling images for step {global_step}...")
                         sampler = XFluxSampler(clip=clip, t5=t5, ae=vae, model=dit, device=accelerator.device)
                         images = []

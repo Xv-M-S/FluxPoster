@@ -62,10 +62,8 @@ def prepare(t5: HFEmbedder, clip: HFEmbedder, img: Tensor, prompt: str | list[st
         "vec": vec.to(img.device),
     }
 
-def prepareForText(img: Tensor, prompt: str | list[str]) -> dict[str, Tensor]:
+def prepareForText(img: Tensor) -> dict[str, Tensor]:
     bs, c, h, w = img.shape
-    if bs == 1 and not isinstance(prompt, str):
-        bs = len(prompt)
 
     img = rearrange(img, "b c (h ph) (w pw) -> b (h w) (c ph pw)", ph=2, pw=2)
     if img.shape[0] == 1 and bs > 1:

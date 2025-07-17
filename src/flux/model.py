@@ -166,8 +166,8 @@ class Flux(nn.Module):
             vec = vec + self.vector_in(y)
             txt = self.txt_in(txt)
         elif flags == "pure_text":
-            vec = vec + self.pure_text_in(txt)
-            txt = self.pure_pooler_in(txt)
+            vec = vec + self.pure_pooler_in(y)
+            txt = self.pure_text_in(txt)
 
         ids = torch.cat((txt_ids, img_ids), dim=1)
         pe = self.pe_embedder(ids)
