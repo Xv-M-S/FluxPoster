@@ -44,3 +44,10 @@ accelerate launch --main_process_port 29586 --config_file "./accelerate/config.y
 # InternViT 1.5
 多模态视觉模型InternViT 1.5在文本识别相关任务上表现出出色的性能。
 故采用InternViT 1.5提取视觉文本特征作为唯一的标识。
+
+# 生成纯文本数据集
+纯文本数据集生成方法：直接在纯白的图片上使用现有的渲染技术渲染出文字。
+``` bash
+cd ./generate_datasets
+python3 generate.py 
+```
