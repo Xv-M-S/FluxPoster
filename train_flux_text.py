@@ -13,6 +13,7 @@ from safetensors.torch import save_file
 import accelerate
 import datasets
 import numpy as np
+from sympy import im
 import torch
 import torch.nn.functional as F
 import torch.utils.checkpoint
@@ -41,10 +42,12 @@ from src.flux.sampling import denoise, get_noise, get_schedule, prepare, unpack,
 from src.flux.util import (configs, load_ae, load_clip,
                        load_flow_model2, load_t5, InternViTWrapper)
 from src.flux.modules.layers import DoubleStreamBlockLoraProcessor, SingleStreamBlockLoraProcessor
-from src.flux.xflux_pipeline import XFluxSampler
+from src.flux.xflux_text_pipeline import XFluxTextSampler
 
 from image_datasets.pure_text_dataset import loader
 from train_flux_poster import GLOBAL_MACHINE
+from PIL import Image
+
 if is_wandb_available():
     import wandb
 logger = get_logger(__name__, log_level="INFO")
@@ -52,7 +55,7 @@ logger = get_logger(__name__, log_level="INFO")
 GLOBAL_MACHINE = "4090"
 os.environ["CUDA_VISIBLE_DEVICES"] = "2,3"
 os.environ["WANDB_MODE"] = "offline"
-GLOBAL_VERTIFY = False
+GLOBAL_VERTIFY = True
 
 def get_models(name: str, device, offload: bool, is_schnell: bool):
     # t5 = load_t5(device, max_length=256 if is_schnell else 512)
@@ -310,10 +313,11 @@ def main():
                 if not args.disable_sampling and global_step % args.sample_every == 0:
                     if accelerator.is_main_process and GLOBAL_VERTIFY:
                         print(f"Sampling images for step {global_step}...")
-                        sampler = XFluxSampler(clip=clip, t5=t5, ae=vae, model=dit, device=accelerator.device)
+                        sampler = XFluxTextSampler(internvit = internvit, ae=vae, model=dit, device=accelerator.device)
                         images = []
-                        for i, prompt in enumerate(args.sample_prompts):
-                            result = sampler(prompt=prompt,
+                        for i, image_path in enumerate(args.sample_prompts):
+                            image_prompt = Image.open(image_path).convert("RGB")
+                            result = sampler(image_prompt=image_prompt,
                                              width=args.sample_width,
                                              height=args.sample_height,
                                              num_steps=args.sample_steps

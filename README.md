@@ -45,7 +45,7 @@ accelerate launch --main_process_port 29586 --config_file "./accelerate/config.y
 
 ``` bash
 export CUDA_VISIBLE_DEVICES=2, 3
-accelerate launch --main_process_port 29586 --config_file "./accelerate/config.yaml" train_flux_text.py --config "train_configs/pure_text_lora.yaml" 
+accelerate launch --main_process_port 29588 --config_file "./accelerate/config.yaml" train_flux_text.py --config "train_configs/pure_text_lora.yaml" 
 ```
 
 离线运行

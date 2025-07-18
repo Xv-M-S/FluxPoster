@@ -147,6 +147,7 @@ def denoise(
             guidance=guidance_vec,
             image_proj=image_proj,
             ip_scale=ip_scale, 
+            flags = "pure_text"
         )
         if i >= timestep_to_start_cfg:
             neg_pred = model(
@@ -159,6 +160,7 @@ def denoise(
                 guidance=guidance_vec, 
                 image_proj=neg_image_proj,
                 ip_scale=neg_ip_scale, 
+                flags = "pure_text"
             )     
             pred = neg_pred + true_gs * (pred - neg_pred)
         img = img + (t_prev - t_curr) * pred
