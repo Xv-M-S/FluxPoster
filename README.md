@@ -56,11 +56,23 @@ nohup accelerate launch --main_process_port 29586 --config_file "./accelerate/co
 ```
 
 # Inference on 4090 lora
+基于lora的train只能非常小范围的微调，不适合训练一个新的模型。
 
 ``` bash
 export WANDB_MODE=offline
 export CUDA_VISIBLE_DEVICES=2,3
 python main_text.py 
+```
+
+# train samll flux on 4090 for pure text
+
+``` bash
+export CUDA_VISIBLE_DEVICES=6,7
+accelerate launch --main_process_port 29568 --config_file "./accelerate/config.yaml" train_flux_text_all.py --config "train_configs/train_text.yaml" 
+```
+
+``` bash
+nohup accelerate launch --main_process_port 29568 --config_file "./accelerate/config.yaml" train_flux_text_all.py --config "train_configs/train_text.yaml" > pure_text_train.log 2>&1 &
 ```
 
 # InternViT 1.5

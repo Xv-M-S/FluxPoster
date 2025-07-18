@@ -117,50 +117,13 @@ def main():
 
     dit, vae  = get_models(name=args.model_name, device=accelerator.device, offload=False, is_schnell=is_schnell)
     internvit = InternViTWrapper(device = "cuda:1")  # 将internvit模型加载到GPU1
-        
-    lora_attn_procs = {}
-
-    if args.double_blocks is None:
-        double_blocks_idx = list(range(19))
-    else:
-        double_blocks_idx = [int(idx) for idx in args.double_blocks.split(",")]
-
-    if args.single_blocks is None:
-        single_blocks_idx = list(range(38))
-    elif args.single_blocks is not None:
-        single_blocks_idx = [int(idx) for idx in args.single_blocks.split(",")]
-
-    for name, attn_processor in dit.attn_processors.items():
-        match = re.search(r'\.(\d+)\.', name)
-        if match:
-            layer_index = int(match.group(1))
-
-        if name.startswith("double_blocks") and layer_index in double_blocks_idx:
-            print("setting LoRA Processor for", name)
-            lora_attn_procs[name] = DoubleStreamBlockLoraProcessor(
-              dim=3072, rank=args.rank
-            )
-        elif name.startswith("single_blocks") and layer_index in single_blocks_idx:
-            print("setting LoRA Processor for", name)
-            lora_attn_procs[name] = SingleStreamBlockLoraProcessor(
-              dim=3072, rank=args.rank
-            )
-        else:
-            lora_attn_procs[name] = attn_processor
-
-    dit.set_attn_processor(lora_attn_procs)
 
     vae.requires_grad_(False)
     # internvit.requires_grad_(False)
-    vae = vae.to(torch.bfloat16)
     dit = dit.to(torch.float32)
+    vae = vae.to(torch.bfloat16)
     dit.train()
     optimizer_cls = torch.optim.AdamW
-    for n, param in dit.named_parameters():
-        if '_lora' not in n:
-            param.requires_grad = False
-        else:
-            print(n)
     print(sum([p.numel() for p in dit.parameters() if p.requires_grad]) / 1000000, 'parameters')
     optimizer = optimizer_cls(
         [p for p in dit.parameters() if p.requires_grad],
