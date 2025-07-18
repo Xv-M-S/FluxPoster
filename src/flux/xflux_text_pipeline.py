@@ -20,6 +20,7 @@ from src.flux.util import (
     load_ae,
     load_clip,
     load_flow_model,
+    load_flow_model2,
     load_t5,
     load_controlnet,
     load_flow_model_quintized,
@@ -32,29 +33,28 @@ from src.flux.util import (
 from transformers import CLIPVisionModelWithProjection, CLIPImageProcessor
 
 class XFluxTextPipeline:
-    def __init__(self, model_type, device, offload: bool = False):
+    def __init__(self, model_type, device, offload: bool = False , weight_type = torch.bfloat16):
         self.device = torch.device(device)
         self.offload = offload
         self.model_type = model_type
 
-        self.internvit = InternViTWrapper()
-        self.ae = load_ae(model_type, device="cpu" if offload else self.device)
+        self.internvit = InternViTWrapper(device = "cuda:1")
+        self.ae = load_ae(model_type, device="cpu")
         if "fp8" in model_type:
-            self.model = load_flow_model_quintized(model_type, device="cpu" if offload else self.device)
+            self.model = load_flow_model_quintized(model_type, device="cpu")
         else:
-            self.model = load_flow_model(model_type, device="cpu" if offload else self.device)
-
-        self.image_encoder_path = "openai/clip-vit-large-patch14"
-        self.hf_lora_collection = "XLabs-AI/flux-lora-collection"
+            self.model = load_flow_model2(model_type, device="cpu")
+        self.ae.to(self.device).to(weight_type)
+        self.model.to(self.device).to(weight_type)
 
     def __call__(self,
                  image_prompt: Image = None,
                  width: int = 512,
                  height: int = 512,
-                 guidance: float = 4,
+                 guidance: torch.bfloat16 = 4,
                  num_steps: int = 50,
                  seed: int = 123456789,
-                 true_gs: float = 3,
+                 true_gs: torch.bfloat16 = 3,
                  timestep_to_start_cfg: int = 0,
                  ):
         width = 16 * (width // 16)
@@ -126,7 +126,7 @@ class XFluxTextPipeline:
             if self.offload:
                 self.offload_model_to_cpu(self.model)
                 self.ae.decoder.to(x.device)
-            x = unpack(x.float(), height, width)
+            x = unpack(x.bfloat16(), height, width)
             x = self.ae.decode(x)
             self.offload_model_to_cpu(self.ae.decoder)
 
