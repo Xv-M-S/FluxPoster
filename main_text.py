@@ -21,12 +21,14 @@ def main():
     img_prompt = "/home/sxm/data02Space/idea2-train-generation-pure-text/FluxPoster/generate_datasets/datasets/random_text_2.png"
     # 模型配置
     model_type = "flux-dev"
+    lora_local_path = "/home/sxm/data02Space/idea2-train-generation-pure-text/FluxPoster/lora/checkpoint-90000/lora.safetensors"
     device = "cuda:0"
     offload = False
     weight_type = torch.bfloat16
     
 
     xflux_pipeline = XFluxTextPipeline(model_type, device, offload, weight_type)
+    xflux_pipeline.set_lora(lora_local_path)
 
     image_prompt = Image.open(img_prompt) 
 

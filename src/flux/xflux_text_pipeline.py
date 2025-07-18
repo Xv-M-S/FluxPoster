@@ -71,6 +71,36 @@ class XFluxTextPipeline:
             timestep_to_start_cfg=timestep_to_start_cfg,
             true_gs=true_gs
         )
+    
+    def set_lora(self, local_path: str = None, repo_id: str = None,
+                 name: str = None, lora_weight: int = 0.7):
+        checkpoint = load_checkpoint(local_path, repo_id, name)
+        self.update_model_with_lora(checkpoint, lora_weight)
+
+    def update_model_with_lora(self, checkpoint, lora_weight):
+        rank = get_lora_rank(checkpoint)
+        lora_attn_procs = {}
+
+        for name, _ in self.model.attn_processors.items():
+            lora_state_dict = {}
+            for k in checkpoint.keys():
+                if name in k:
+                    lora_state_dict[k[len(name) + 1:]] = checkpoint[k] * lora_weight
+
+            if len(lora_state_dict):
+                if name.startswith("single_blocks"):
+                    lora_attn_procs[name] = SingleStreamBlockLoraProcessor(dim=3072, rank=rank)
+                else:
+                    lora_attn_procs[name] = DoubleStreamBlockLoraProcessor(dim=3072, rank=rank)
+                lora_attn_procs[name].load_state_dict(lora_state_dict)
+                lora_attn_procs[name].to(self.device)
+            else:
+                if name.startswith("single_blocks"):
+                    lora_attn_procs[name] = SingleStreamBlockProcessor()
+                else:
+                    lora_attn_procs[name] = DoubleStreamBlockProcessor()
+
+        self.model.set_attn_processor(lora_attn_procs)
 
     def forward(
         self,

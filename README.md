@@ -55,6 +55,14 @@ export CUDA_VISIBLE_DEVICES=2,3
 nohup accelerate launch --main_process_port 29586 --config_file "./accelerate/config.yaml" train_flux_text.py --config "train_configs/pure_text_lora.yaml" > train_output.log 2>&1 &
 ```
 
+# Inference on 4090 lora
+
+``` bash
+export WANDB_MODE=offline
+export CUDA_VISIBLE_DEVICES=2,3
+python main_text.py 
+```
+
 # InternViT 1.5
 多模态视觉模型InternViT 1.5在文本识别相关任务上表现出出色的性能。
 故采用InternViT 1.5提取视觉文本特征作为唯一的标识。
