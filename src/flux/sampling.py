@@ -130,7 +130,8 @@ def denoise(
     image_proj: Tensor=None, 
     neg_image_proj: Tensor=None, 
     ip_scale: Tensor | float = 1.0,
-    neg_ip_scale: Tensor | float = 1.0
+    neg_ip_scale: Tensor | float = 1.0,
+    flags = "flux", # 用于标记更改，扩展功能
 ):
     i = 0
     # this is ignored for schnell
@@ -147,7 +148,7 @@ def denoise(
             guidance=guidance_vec,
             image_proj=image_proj,
             ip_scale=ip_scale, 
-            flags = "pure_text"
+            flags = flags
         )
         if i >= timestep_to_start_cfg:
             neg_pred = model(
@@ -160,7 +161,7 @@ def denoise(
                 guidance=guidance_vec, 
                 image_proj=neg_image_proj,
                 ip_scale=neg_ip_scale, 
-                flags = "pure_text"
+                flags = flags
             )     
             pred = neg_pred + true_gs * (pred - neg_pred)
         img = img + (t_prev - t_curr) * pred

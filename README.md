@@ -75,6 +75,13 @@ accelerate launch --main_process_port 29568 --config_file "./accelerate/config.y
 nohup accelerate launch --main_process_port 29568 --config_file "./accelerate/config.yaml" train_flux_text_all.py --config "train_configs/train_text.yaml" > pure_text_train.log 2>&1 &
 ```
 
+# inference on 4090 for flux-dev
+
+``` bash
+export CUDA_VISIBLE_DEVICES=0,1
+python main_flux.py
+```
+
 # InternViT 1.5
 多模态视觉模型InternViT 1.5在文本识别相关任务上表现出出色的性能。
 故采用InternViT 1.5提取视觉文本特征作为唯一的标识。

@@ -150,7 +150,8 @@ class XFluxTextPipeline:
                 true_gs=true_gs,
                 neg_txt=neg_txt,
                 neg_txt_ids=neg_txt_ids,
-                neg_vec=neg_vec
+                neg_vec=neg_vec,
+                flags = "pure_text"  # 用于标记更改，扩展功能
             )
 
             if self.offload:
