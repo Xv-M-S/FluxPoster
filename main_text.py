@@ -22,6 +22,7 @@ def main():
     # 模型配置
     model_type = "flux-dev"
     lora_local_path = "/home/sxm/data02Space/idea2-train-generation-pure-text/FluxPoster/lora/checkpoint-90000/lora.safetensors"
+    lora_local_path = "/home/sxm/data02Space/flux/EasyText/models/pretrain.safetensors"
     device = "cuda:0"
     offload = False
     weight_type = torch.bfloat16

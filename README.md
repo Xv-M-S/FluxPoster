@@ -82,6 +82,13 @@ export CUDA_VISIBLE_DEVICES=0,1
 python main_flux.py
 ```
 
+# inference on 4090 for easy text
+
+``` bash
+export CUDA_VISIBLE_DEVICES=0,1
+python main_easy_text.py
+```
+
 # InternViT 1.5
 多模态视觉模型InternViT 1.5在文本识别相关任务上表现出出色的性能。
 故采用InternViT 1.5提取视觉文本特征作为唯一的标识。
