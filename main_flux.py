@@ -12,7 +12,7 @@ def main():
     guidance = 4.0
     num_images_per_prompt = 1
     num_steps = 50
-    seed = 123456789
+    seed = 1234
     true_gs = 3.5
     timestep_to_start_cfg = 0
     save_path = "results"
@@ -24,7 +24,7 @@ def main():
     device1 = "cuda:1"
     offload = False
     weight_type = torch.bfloat16
-    prompt = "a image of with flux text on it"
+    prompt = "you are"
 
     xflux_pipeline = XFluxPipeline(model_type, device0, device1, offload)
 

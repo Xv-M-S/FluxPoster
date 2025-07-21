@@ -99,3 +99,10 @@ python main_easy_text.py
 cd ./generate_datasets
 python3 generate.py 
 ```
+
+# train on single 汉字
+
+``` bash
+export CUDA_VISIBLE_DEVICES=4,5
+nohup accelerate launch --main_process_port 29530 --config_file "./accelerate/config.yaml" train_flux_text.py --config "train_configs/pure_text_lora2.yaml" > singlehanzi.log 2>&1 &
+```

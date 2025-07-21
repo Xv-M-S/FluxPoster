@@ -12,7 +12,7 @@ def main():
     guidance = 4.0
     num_images_per_prompt = 1
     num_steps = 50
-    seed = 123456789
+    seed = 123456
     true_gs = 3.5
     timestep_to_start_cfg = 0
     save_path = "results"
@@ -23,7 +23,7 @@ def main():
     device0 = "cuda:0"
     device1 = "cuda:1"
     offload = False
-    prompt = "a image with chinese hello text on it"
+    prompt = "a small dog is holding a sign with text on it. the '你好' is written in chinese."
     
 
     xflux_pipeline = XFluxPipeline(model_type, device0, device1, offload)
